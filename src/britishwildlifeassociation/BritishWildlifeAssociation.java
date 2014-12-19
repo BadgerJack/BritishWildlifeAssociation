@@ -27,11 +27,16 @@ public class BritishWildlifeAssociation {
      Observations not included as they are kept with
      their relative animals.
      */
-    ArrayList<Animal> animals;
-    ArrayList<Volunteer> volunteers;
-    ArrayList<Professional> professionals;
+    static ArrayList<Animal> animals;
+    static ArrayList<Volunteer> volunteers;
+    static ArrayList<Professional> professionals;
 
     public static void main(String[] args) {
+        animals = new ArrayList<>();
+        volunteers = new ArrayList<>();
+        professionals = new ArrayList<>();
+        
+        initHardCodeData();
         GUI dash = new GUI();
         dash.setVisible(true);
     }
@@ -40,7 +45,7 @@ public class BritishWildlifeAssociation {
      Hardcoded data to fill out the tables
      when first running the program
      */
-    void initHardCodeData() {
+    static void initHardCodeData() {
         Date date = new Date();
         animals.add(new Animal("Fox", 0));
         animals.add(new Animal("Hedgehog", 1));

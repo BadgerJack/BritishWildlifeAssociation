@@ -1,5 +1,6 @@
 package britishwildlifeassociation;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 
 /**
@@ -8,11 +9,23 @@ import javax.swing.JFrame;
  */
 public class GUI extends javax.swing.JFrame {
 
+    DefaultListModel animList = new DefaultListModel();
+    DefaultListModel profList = new DefaultListModel();
+    DefaultListModel volList = new DefaultListModel();
+
     /**
      * Creates new form GUI
      */
     public GUI() {
         initComponents();
+
+        for (int i = 0; i < 3; ++i) {
+            animList.addElement(BritishWildlifeAssociation.animals.get(i).getName());
+        }
+        profList.addElement(BritishWildlifeAssociation.professionals.get(0).getPrevStatus().getFirstName());
+        for (int i = 0; i < 3; ++i) {
+            volList.addElement(BritishWildlifeAssociation.volunteers.get(i).getFirstName());
+        }
     }
 
     /**
@@ -70,11 +83,6 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        lstObservations.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(lstObservations);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -144,11 +152,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        lstAnimals.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
+        lstAnimals.setModel(animList);
         jScrollPane2.setViewportView(lstAnimals);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -214,18 +218,10 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        lstProfessional.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
+        lstProfessional.setModel(profList);
         jScrollPane3.setViewportView(lstProfessional);
 
-        lstVolunteer.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
+        lstVolunteer.setModel(volList);
         jScrollPane4.setViewportView(lstVolunteer);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
