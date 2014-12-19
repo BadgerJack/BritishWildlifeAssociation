@@ -1,5 +1,7 @@
 package britishwildlifeassociation;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author hobbes
@@ -52,11 +54,21 @@ public class GUI extends javax.swing.JFrame {
         setTitle("British Wildlife Association");
 
         btnNewObservation.setText("New Observation");
+        btnNewObservation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewObservationActionPerformed(evt);
+            }
+        });
 
         btnEditObservation.setText("Edit Observation");
         btnEditObservation.setMaximumSize(new java.awt.Dimension(112, 25));
         btnEditObservation.setMinimumSize(new java.awt.Dimension(112, 25));
         btnEditObservation.setPreferredSize(new java.awt.Dimension(112, 25));
+        btnEditObservation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditObservationActionPerformed(evt);
+            }
+        });
 
         lstObservations.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -98,14 +110,39 @@ public class GUI extends javax.swing.JFrame {
         jTabbedPane5.addTab("Observations", jPanel1);
 
         btnAddAnimal.setText("Add Animal");
+        btnAddAnimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddAnimalActionPerformed(evt);
+            }
+        });
 
         btnEditAnimal.setText("Edit Animal");
+        btnEditAnimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditAnimalActionPerformed(evt);
+            }
+        });
 
         btnViewObservations.setText("View Observations");
+        btnViewObservations.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewObservationsActionPerformed(evt);
+            }
+        });
 
         btnViewAlertHistory.setText("View Alert History");
+        btnViewAlertHistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewAlertHistoryActionPerformed(evt);
+            }
+        });
 
         btnIssueAlert.setText("Issue Alert");
+        btnIssueAlert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIssueAlertActionPerformed(evt);
+            }
+        });
 
         lstAnimals.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -157,10 +194,25 @@ public class GUI extends javax.swing.JFrame {
         jTabbedPane5.addTab("Watchlist", jPanel2);
 
         btnEditObserver.setText("Edit Observer");
+        btnEditObserver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditObserverActionPerformed(evt);
+            }
+        });
 
         btnNewObserver.setText("New Observer");
+        btnNewObserver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewObserverActionPerformed(evt);
+            }
+        });
 
         btnMakeProfessional.setText("Make Professional");
+        btnMakeProfessional.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMakeProfessionalActionPerformed(evt);
+            }
+        });
 
         lstProfessional.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -235,6 +287,55 @@ public class GUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnNewObservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewObservationActionPerformed
+        JFrame newObs = new ObservationNew();
+        newObs.setVisible(true);
+    }//GEN-LAST:event_btnNewObservationActionPerformed
+
+    private void btnEditObservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditObservationActionPerformed
+        JFrame editObs = new ObservationEdit();
+        editObs.setVisible(true);
+    }//GEN-LAST:event_btnEditObservationActionPerformed
+
+    private void btnAddAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddAnimalActionPerformed
+        JFrame newAnimal = new AnimalNew();
+        newAnimal.setVisible(true);
+    }//GEN-LAST:event_btnAddAnimalActionPerformed
+
+    private void btnEditAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditAnimalActionPerformed
+        JFrame editAnimal = new AnimalEdit();
+        editAnimal.setVisible(true);
+    }//GEN-LAST:event_btnEditAnimalActionPerformed
+
+    private void btnViewObservationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewObservationsActionPerformed
+        // Handled seperately
+    }//GEN-LAST:event_btnViewObservationsActionPerformed
+
+    private void btnIssueAlertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIssueAlertActionPerformed
+        JFrame newObsCall = new ObservationCallNew();
+        newObsCall.setVisible(true);
+    }//GEN-LAST:event_btnIssueAlertActionPerformed
+
+    private void btnViewAlertHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewAlertHistoryActionPerformed
+        JFrame ObsCallList = new ObservationCallList();
+        ObsCallList.setVisible(true);
+    }//GEN-LAST:event_btnViewAlertHistoryActionPerformed
+
+    private void btnNewObserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewObserverActionPerformed
+        JFrame newObservation = new ObservationNew();
+        newObservation.setVisible(true);
+    }//GEN-LAST:event_btnNewObserverActionPerformed
+
+    private void btnEditObserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditObserverActionPerformed
+        JFrame editObservation = new ObservationEdit();
+        editObservation.setVisible(true);
+    }//GEN-LAST:event_btnEditObserverActionPerformed
+
+    private void btnMakeProfessionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMakeProfessionalActionPerformed
+        JFrame makeProf = new ObserverMakeProf();
+        makeProf.setVisible(true);
+    }//GEN-LAST:event_btnMakeProfessionalActionPerformed
 
     /**
      * @param args the command line arguments

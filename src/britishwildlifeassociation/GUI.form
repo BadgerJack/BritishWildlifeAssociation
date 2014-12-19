@@ -97,6 +97,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="New Observation"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewObservationActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnEditObservation">
               <Properties>
@@ -111,6 +114,9 @@
                   <Dimension value="[112, 25]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditObservationActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane1">
               <AuxValues>
@@ -198,26 +204,41 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add Animal"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddAnimalActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnEditAnimal">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit Animal"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditAnimalActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnViewObservations">
               <Properties>
                 <Property name="text" type="java.lang.String" value="View Observations"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewObservationsActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnViewAlertHistory">
               <Properties>
                 <Property name="text" type="java.lang.String" value="View Alert History"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewAlertHistoryActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnIssueAlert">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Issue Alert"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIssueAlertActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
               <AuxValues>
@@ -306,16 +327,25 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit Observer"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditObserverActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnNewObserver">
               <Properties>
                 <Property name="text" type="java.lang.String" value="New Observer"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewObserverActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnMakeProfessional">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Make Professional"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMakeProfessionalActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane3">
               <AuxValues>

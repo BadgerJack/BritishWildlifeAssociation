@@ -1,6 +1,7 @@
 package britishwildlifeassociation;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -66,7 +67,7 @@ public class Animal {
      */
     public Observation makeObservation(Observer observer, Animal animal) {
         animal = this;
-        return null;
+        return null;//new Observation(animal, observer, timestamp, location, description, confidence, professional);
     }
 
     /*
