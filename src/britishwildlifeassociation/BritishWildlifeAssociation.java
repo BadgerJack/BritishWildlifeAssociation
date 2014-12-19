@@ -18,9 +18,6 @@ package britishwildlifeassociation;
  */
 public class BritishWildlifeAssociation {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         GUI dash = new GUI();
         dash.setVisible(true);

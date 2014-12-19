@@ -323,13 +323,13 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnViewAlertHistoryActionPerformed
 
     private void btnNewObserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewObserverActionPerformed
-        JFrame newObservation = new ObservationNew();
-        newObservation.setVisible(true);
+        JFrame newObserver = new ObserverNew();
+        newObserver.setVisible(true);
     }//GEN-LAST:event_btnNewObserverActionPerformed
 
     private void btnEditObserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditObserverActionPerformed
-        JFrame editObservation = new ObservationEdit();
-        editObservation.setVisible(true);
+        JFrame editObserver = new ObserverEdit();
+        editObserver.setVisible(true);
     }//GEN-LAST:event_btnEditObserverActionPerformed
 
     private void btnMakeProfessionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMakeProfessionalActionPerformed
