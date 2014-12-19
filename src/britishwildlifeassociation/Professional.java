@@ -8,7 +8,7 @@ import java.util.Date;
  */
 public class Professional implements Observer {
 
-    Date contractStart, contractEnd;
+    Long contractStart, contractEnd;
     int salary, annObservations;
     Volunteer prevStatus;
 
@@ -20,8 +20,8 @@ public class Professional implements Observer {
      */
     public Professional() {
     }
-
-    public Professional(Date contractStart, Date contractEnd, int salary, int annObservations, Volunteer prevStatus) {
+//keep as Date or set long?
+    public Professional(Long contractStart, Long contractEnd, int salary, int annObservations, Volunteer prevStatus) {
         this.contractStart = contractStart;
         this.contractEnd = contractEnd;
         this.salary = salary;
@@ -34,19 +34,19 @@ public class Professional implements Observer {
      Most of these will be set in the constructor,
      but Sets allows us to edit an instance later
      */
-    public Date getContractStart() {
+    public Long getContractStart() {
         return contractStart;
     }
 
-    public void setContractStart(Date contractStart) {
+    public void setContractStart(Long contractStart) {
         this.contractStart = contractStart;
     }
 
-    public Date getContractEnd() {
+    public Long getContractEnd() {
         return contractEnd;
     }
 
-    public void setContractEnd(Date contractEnd) {
+    public void setContractEnd(Long contractEnd) {
         this.contractEnd = contractEnd;
     }
 
