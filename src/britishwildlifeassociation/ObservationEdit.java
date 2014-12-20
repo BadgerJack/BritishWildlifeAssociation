@@ -1,5 +1,7 @@
 package britishwildlifeassociation;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hobbes
@@ -25,7 +27,7 @@ public class ObservationEdit extends javax.swing.JFrame {
         txtLocation = new javax.swing.JTextField();
         chkProfessional = new javax.swing.JCheckBox();
         txtDescription = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtADescription = new javax.swing.JTextArea();
         txtObserver = new javax.swing.JTextField();
         txtConfidence = new javax.swing.JTextField();
         txtDate = new javax.swing.JTextField();
@@ -41,10 +43,10 @@ public class ObservationEdit extends javax.swing.JFrame {
 
         chkProfessional.setText("Professional?");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Description");
-        txtDescription.setViewportView(jTextArea1);
+        txtADescription.setColumns(20);
+        txtADescription.setRows(5);
+        txtADescription.setText("Description");
+        txtDescription.setViewportView(txtADescription);
 
         txtObserver.setText("Observer");
 
@@ -60,10 +62,20 @@ public class ObservationEdit extends javax.swing.JFrame {
         });
 
         btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         txtAnimal.setText("Animal");
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -128,6 +140,26 @@ public class ObservationEdit extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
 
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        if (txtAnimal.getText().isEmpty() == false || txtLocation.getText().isEmpty() == false
+                || txtDate.getText().isEmpty() == false || txtObserver.getText().isEmpty() == false
+                || txtConfidence.getText().isEmpty() == false) {
+            ModelViewController.editObservation(txtAnimal.getText(), txtObserver.getText(),
+                    txtDate.getText(), txtLocation.getText(), txtConfidence.getText(),
+                    chkProfessional.isSelected(), txtADescription.getText());
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "A required field is missing");
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Delete Animal", JOptionPane.YES_NO_OPTION) == 1) {
+            ModelViewController.deleteAnimal(txtAnimal.getText());
+        }
+        this.dispose();
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -168,7 +200,7 @@ public class ObservationEdit extends javax.swing.JFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSave;
     private javax.swing.JCheckBox chkProfessional;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea txtADescription;
     private javax.swing.JTextField txtAnimal;
     private javax.swing.JTextField txtConfidence;
     private javax.swing.JTextField txtDate;

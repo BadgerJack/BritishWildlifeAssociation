@@ -55,6 +55,11 @@ public class ObservationCallNew extends javax.swing.JFrame {
         });
 
         btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,6 +110,15 @@ public class ObservationCallNew extends javax.swing.JFrame {
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        if (txtAnimal.getText().isEmpty() == false || txtLocation.getText().isEmpty() == false
+                || txtStart.getText().isEmpty() == false) {
+            ModelViewController.createObservationCall(txtAnimal.getText(), txtLocation.getText(),
+                    txtStart.getText(), txtEnd.getText(), txtDescription.getText());
+            this.dispose();
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     /**
      * @param args the command line arguments

@@ -1,5 +1,7 @@
 package britishwildlifeassociation;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hobbes
@@ -48,6 +50,11 @@ public class ObserverNew extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txtAddress);
 
         btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         btnCancel.setText("Cancel");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -102,6 +109,18 @@ public class ObserverNew extends javax.swing.JFrame {
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        if ((txtNameFirst.getText().isEmpty() == false || txtNameLast.getText().isEmpty() == false
+                || txtAddress.getText().isEmpty() == false) && (txtEmail.getText().isEmpty() == false
+                || txtPhone.getText().isEmpty() == false)) {
+            ModelViewController.createObserver(txtNameFirst.getText(), txtNameLast.getText(),
+                    txtEmail.getText(), txtPhone.getText(), txtAddress.getText());
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "A required field is missing");
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     /**
      * @param args the command line arguments

@@ -1,5 +1,7 @@
 package britishwildlifeassociation;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hobbes
@@ -48,6 +50,11 @@ public class ObserverMakeProf extends javax.swing.JFrame {
         });
 
         btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -90,6 +97,17 @@ public class ObserverMakeProf extends javax.swing.JFrame {
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        if (txtName.getText().isEmpty() == false || txtContractStart.getText().isEmpty() == false
+                || txtContractEnd.getText().isEmpty() == false || txtSalary.getText().isEmpty() == false) {
+            ModelViewController.makeProfObserver(txtName.getText(), txtContractStart.getText(),
+                    txtContractEnd.getText(), txtSalary.getText());
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "A required field is missing");
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     /**
      * @param args the command line arguments

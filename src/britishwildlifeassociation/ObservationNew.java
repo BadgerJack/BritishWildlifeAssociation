@@ -1,5 +1,7 @@
 package britishwildlifeassociation;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hobbes
@@ -27,7 +29,7 @@ public class ObservationNew extends javax.swing.JFrame {
         txtDate = new javax.swing.JTextField();
         txtLocation = new javax.swing.JTextField();
         txtDescription = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtADescription = new javax.swing.JTextArea();
         chkProfessional = new javax.swing.JCheckBox();
         txtConfidence = new javax.swing.JTextField();
         btnCancel = new javax.swing.JButton();
@@ -44,10 +46,10 @@ public class ObservationNew extends javax.swing.JFrame {
 
         txtLocation.setText("Location");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Description");
-        txtDescription.setViewportView(jTextArea1);
+        txtADescription.setColumns(20);
+        txtADescription.setRows(5);
+        txtADescription.setText("Description");
+        txtDescription.setViewportView(txtADescription);
 
         chkProfessional.setText("Professional?");
 
@@ -61,6 +63,11 @@ public class ObservationNew extends javax.swing.JFrame {
         });
 
         btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,6 +127,19 @@ public class ObservationNew extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
 
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        if (txtAnimal.getText().isEmpty() == false || txtLocation.getText().isEmpty() == false
+                || txtDate.getText().isEmpty() == false || txtObserver.getText().isEmpty() == false
+                || txtConfidence.getText().isEmpty() == false) {
+            ModelViewController.createObservation(txtAnimal.getText(), txtObserver.getText(),
+                    txtDate.getText(), txtLocation.getText(), txtConfidence.getText(),
+                    chkProfessional.isSelected(), txtADescription.getText());
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "A required field is missing");
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -159,7 +179,7 @@ public class ObservationNew extends javax.swing.JFrame {
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnSave;
     private javax.swing.JCheckBox chkProfessional;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea txtADescription;
     private javax.swing.JTextField txtAnimal;
     private javax.swing.JTextField txtConfidence;
     private javax.swing.JTextField txtDate;

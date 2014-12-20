@@ -1,5 +1,7 @@
 package britishwildlifeassociation;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hobbes
@@ -48,6 +50,11 @@ public class ObserverEdit extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txtAddress);
 
         btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         txtEmail.setText("Email");
 
@@ -58,6 +65,11 @@ public class ObserverEdit extends javax.swing.JFrame {
         txtNameFirst.setText("First Name");
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,6 +120,25 @@ public class ObserverEdit extends javax.swing.JFrame {
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Delete Animal", JOptionPane.YES_NO_OPTION) == 1) {
+            ModelViewController.deleteObserver(txtNameFirst.getText(), txtNameLast.getText(), txtEmail.getText());
+        }
+        this.dispose();
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        if ((txtNameFirst.getText().isEmpty() == false || txtNameLast.getText().isEmpty() == false
+                || txtAddress.getText().isEmpty() == false) && (txtEmail.getText().isEmpty() == false
+                || txtPhone.getText().isEmpty() == false)) {
+            ModelViewController.editObserver(txtNameFirst.getText(), txtNameLast.getText(),
+                    txtEmail.getText(), txtPhone.getText(), txtAddress.getText());
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "A required field is missing");
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     /**
      * @param args the command line arguments
