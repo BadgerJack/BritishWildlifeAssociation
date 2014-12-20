@@ -9,35 +9,20 @@ import javax.swing.JFrame;
  */
 public class GUI extends javax.swing.JFrame {
 
-    DefaultListModel animList = new DefaultListModel();
-    DefaultListModel profList = new DefaultListModel();
-    DefaultListModel volList = new DefaultListModel();
-    DefaultListModel obsList = new DefaultListModel();
+    static DefaultListModel animList = new DefaultListModel();
+    static DefaultListModel profList = new DefaultListModel();
+    static DefaultListModel volList = new DefaultListModel();
+    static DefaultListModel obsList = new DefaultListModel();
 
     /**
      * Creates new form GUI and populates with hard coded values
      */
     public GUI() {
         initComponents();
+        
+        //pop(object)
+        Controller.populate();
 
-        for (int i = 0; i < BritishWildlifeAssociation.animals.size(); ++i) {
-            animList.addElement(BritishWildlifeAssociation.animals.get(i).getName());
-        }
-        for (int i = 0; i < BritishWildlifeAssociation.professionals.size(); ++i) {
-            profList.addElement(BritishWildlifeAssociation.professionals.get(i).getPrevStatus().getFirstName() + " "
-                    + BritishWildlifeAssociation.professionals.get(i).getPrevStatus().getLastName() + " "
-                    + BritishWildlifeAssociation.professionals.get(i).getPrevStatus().getAddress()
-            );
-        }
-        for (int i = 0; i < BritishWildlifeAssociation.volunteers.size(); ++i) {
-            volList.addElement(BritishWildlifeAssociation.volunteers.get(i).getFirstName() + " "
-                    + BritishWildlifeAssociation.volunteers.get(i).getLastName() + " "
-                    + BritishWildlifeAssociation.volunteers.get(i).getAddress());
-        }
-        for (int i = 0; i < BritishWildlifeAssociation.observations.size(); ++i) {
-            obsList.addElement(BritishWildlifeAssociation.observations.get(i).getAnimal().getName() + " "
-                    + BritishWildlifeAssociation.observations.get(i).getAnimal().getThreatLevel());
-        }
     }
 
     /**

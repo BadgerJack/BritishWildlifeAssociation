@@ -25,52 +25,49 @@ public class BritishWildlifeAssociation {
      Array lists used by the rest of the program
      and the GUI to keep track of various objects.
      Observations not included as they are kept with
-     their relative animals.
+     their relative Controller.animals.
      */
-    static ArrayList<Animal> animals;
-    static ArrayList<Volunteer> volunteers;
-    static ArrayList<Professional> professionals;
-    static ArrayList<Observation> observations;
+    
     static Date date = new Date();
 
     public static void main(String[] args) {
-        animals = new ArrayList<>();
-        volunteers = new ArrayList<>();
-        professionals = new ArrayList<>();
-        observations = new ArrayList<>();
+        Controller.animals = new ArrayList<>();
+        Controller.volunteers = new ArrayList<>();
+        Controller.professionals = new ArrayList<>();
+        Controller.observations = new ArrayList<>();
 
         initHardCodeData();
 
-        animals.add(new Animal("Penguin", 3));
-        for (Animal animal : animals) {
+        Controller.animals.add(new Animal("Penguin", 3));
+        for (Animal animal : Controller.animals) {
             if ("Penguin".equals(animal.getName())) {
                 animal.setThreatLevel(2);
                 break;
             }
         }
 
-        volunteers.add(new Volunteer("M", "S", "24", "0000", "bees@bees"));
-        for (Volunteer volunteer : volunteers) {
+        Controller.volunteers.add(new Volunteer("M", "S", "24", "0000", "bees@bees"));
+        for (Volunteer volunteer : Controller.volunteers) {
             if ("M".equals(volunteer.getFirstName()) && "S".equals(volunteer.getLastName())) {
                 volunteer.setFirstName("P");
-                professionals.add(new Professional(date.getTime(), date.getTime(), 900, 2, volunteer));
-                volunteers.remove(volunteer);
+                Controller.professionals.add(new Professional(date.getTime(), date.getTime(), 900, 2, volunteer));
+                Controller.volunteers.remove(volunteer);
                 break;
             }
 
         }
 
-        for (Professional professional : professionals) {
+        for (Professional professional : Controller.professionals) {
             if (("P".equals(professional.getPrevStatus().getFirstName()) && ("S".equals(professional.getPrevStatus().getLastName())))) {
                 professional.getPrevStatus().setLastName("C");
-                volunteers.add(professional.getPrevStatus());
-                professionals.remove(professional);
+                Controller.volunteers.add(professional.getPrevStatus());
+                Controller.professionals.remove(professional);
                 break;
             }
 
         }
 
-        for (Volunteer volunteer : volunteers) {
+        for (Volunteer volunteer : Controller.volunteers) {
             if ("P".equals(volunteer.getFirstName()) && "C".equals(volunteer.getLastName())) {
                 volunteer.setAddress("15");
                 break;
@@ -85,19 +82,19 @@ public class BritishWildlifeAssociation {
      when first running the program
      */
     static void initHardCodeData() {
-        animals.add(new Animal("Fox", 0));
-        animals.add(new Animal("Hedgehog", 1));
-        animals.add(new Animal("Rabbit", 1));
+        Controller.animals.add(new Animal("Fox", 0));
+        Controller.animals.add(new Animal("Hedgehog", 1));
+        Controller.animals.add(new Animal("Rabbit", 1));
 
-        volunteers.add(new Volunteer("Matt", "Smith", "23 Hamilton Gardens", "01626256312", "fezandbowtie@hotmail.co.uk"));
-        volunteers.add(new Volunteer("David", "Tennant", "23 Hamilton Gardens", "01626256312", "awholenewspectrum@hotmail.com"));
-        volunteers.add(new Volunteer("Peter", "Capaldi", "42 Current Lane", "02182823012", "newera@gmail.com"));
+        Controller.volunteers.add(new Volunteer("Matt", "Smith", "23 Hamilton Gardens", "01626256312", "fezandbowtie@hotmail.co.uk"));
+        Controller.volunteers.add(new Volunteer("David", "Tennant", "23 Hamilton Gardens", "01626256312", "awholenewspectrum@hotmail.com"));
+        Controller.volunteers.add(new Volunteer("Peter", "Capaldi", "42 Current Lane", "02182823012", "newera@gmail.com"));
 
         Volunteer v = new Volunteer("Tom", "Baker", "Watchtower, Fort Boyard", "N/A", "jellybeans@hotmail.com");
         //keep as date or set long?
-        professionals.add(new Professional(date.getTime(), date.getTime(), 1200, 0, v));
+        Controller.professionals.add(new Professional(date.getTime(), date.getTime(), 1200, 0, v));
 
-        observations.add(new Observation(animals.get(0), volunteers.get(0), date.getTime(), "Somewhere", "Hordes of bees", 1, false));
+        Controller.observations.add(new Observation(Controller.animals.get(0), Controller.volunteers.get(0), date.getTime(), "Somewhere", "Hordes of bees", 1, false));
     }
 
 }
