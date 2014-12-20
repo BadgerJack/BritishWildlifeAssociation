@@ -15,6 +15,7 @@ public class GUI extends javax.swing.JFrame {
 
     /**
      * Creates new form GUI
+     * and populates with hard coded values
      */
     public GUI() {
         initComponents();
