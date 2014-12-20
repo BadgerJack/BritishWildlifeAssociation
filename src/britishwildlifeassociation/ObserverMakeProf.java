@@ -99,9 +99,9 @@ public class ObserverMakeProf extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        if (txtName.getText().isEmpty() == false || txtContractStart.getText().isEmpty() == false
-                || txtContractEnd.getText().isEmpty() == false || txtSalary.getText().isEmpty() == false) {
-            ModelViewController.makeProfObserver(txtName.getText(), txtContractStart.getText(),
+        if (txtContractStart.getText().isEmpty() == false || txtContractEnd.getText().isEmpty() == false
+                || txtSalary.getText().isEmpty() == false) {
+            ModelViewController.makeProfObserver(txtContractStart.getText(),
                     txtContractEnd.getText(), txtSalary.getText());
             this.dispose();
         } else {

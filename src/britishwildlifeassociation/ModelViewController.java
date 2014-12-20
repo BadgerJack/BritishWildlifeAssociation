@@ -3,46 +3,59 @@ package britishwildlifeassociation;
 /**
  *
  * @author hobbes
+ *
+ * The Model/View Controller acts as a relay between application class objects,
+ * and the user interface. This reduces object cohesion and improves security by
+ * preventing users from directly interfacing with internal classes.
+ *
  */
 public class ModelViewController {
 
-    static void editAnimal(String text, String text0) {
+    //Functions for controlling Animal objects
+    static void createAnimal(String newName, String newThreatLevel) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    static void deleteAnimal(String text) {
+    static void editAnimal(String newName, String newThreatLevel) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    static void createAnimal(String text, String text0) {
+    static void deleteAnimal(String animalName) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    static void createObservationCall(String text, String text0, String text1, String text2, String text3) {
+    //Functions for controlling ObservationCall objects
+    static void createObservationCall(String newAnimalName, String newLocation, String start, String end, String newDescription) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    static void createObservation(String text, String text0, String text1, String text2, String text3, boolean selected, String text4) {
+    //Functions for controlling Observation objects
+    static void createObservation(String newAnimalName, String newObserverName, String newDate, String newLocation, String newConfidence, boolean newProfessional, String newDescription) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    static void editObservation(String text, String text0, String text1, String text2, String text3, boolean selected, String text4) {
+    static void editObservation(String newAnimalName, String newObserverName, String newDate, String newLocation, String newConfidence, boolean newProfessional, String newDescription) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    static void deleteObserver(String text, String text0, String text1) {
+    static void deleteObservation(String animalName, String observerName, String observationDate) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    static void editObserver(String text, String text0, String text1, String text2, String text3) {
+    //Functions for controlling Observer objects
+    static void createObserver(String newForename, String newSurname, String newEmail, String newPhone, String newAddress) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    static void createObserver(String text, String text0, String text1, String text2, String text3) {
+    static void editObserver(String newForename, String newSurname, String newEmail, String newPhone, String newAddress) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    static void makeProfObserver(String text, String text0, String text1, String text2) {
+    static void deleteObserver(String forename, String surname, String newEmail) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    static void makeProfObserver(String newContractStart, String newContractEnd, String newSalary) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

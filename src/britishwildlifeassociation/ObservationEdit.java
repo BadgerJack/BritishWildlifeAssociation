@@ -155,7 +155,7 @@ public class ObservationEdit extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Delete Animal", JOptionPane.YES_NO_OPTION) == 1) {
-            ModelViewController.deleteAnimal(txtAnimal.getText());
+            ModelViewController.deleteObservation(txtAnimal.getText(), txtObserver.getText(), txtDate.getText());
         }
         this.dispose();
     }//GEN-LAST:event_btnDeleteActionPerformed
