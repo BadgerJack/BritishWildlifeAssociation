@@ -1,5 +1,6 @@
 package britishwildlifeassociation;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 
 /**
@@ -8,11 +9,35 @@ import javax.swing.JFrame;
  */
 public class GUI extends javax.swing.JFrame {
 
+    DefaultListModel animList = new DefaultListModel();
+    DefaultListModel profList = new DefaultListModel();
+    DefaultListModel volList = new DefaultListModel();
+    DefaultListModel obsList = new DefaultListModel();
+
     /**
      * Creates new form GUI and populates with hard coded values
      */
     public GUI() {
         initComponents();
+
+        for (int i = 0; i < BritishWildlifeAssociation.animals.size(); ++i) {
+            animList.addElement(BritishWildlifeAssociation.animals.get(i).getName());
+        }
+        for (int i = 0; i < BritishWildlifeAssociation.professionals.size(); ++i) {
+            profList.addElement(BritishWildlifeAssociation.professionals.get(i).getPrevStatus().getFirstName() + " "
+                    + BritishWildlifeAssociation.professionals.get(i).getPrevStatus().getLastName() + " "
+                    + BritishWildlifeAssociation.professionals.get(i).getPrevStatus().getAddress()
+            );
+        }
+        for (int i = 0; i < BritishWildlifeAssociation.volunteers.size(); ++i) {
+            volList.addElement(BritishWildlifeAssociation.volunteers.get(i).getFirstName() + " "
+                    + BritishWildlifeAssociation.volunteers.get(i).getLastName() + " "
+                    + BritishWildlifeAssociation.volunteers.get(i).getAddress());
+        }
+        for (int i = 0; i < BritishWildlifeAssociation.observations.size(); ++i) {
+            obsList.addElement(BritishWildlifeAssociation.observations.get(i).getAnimal().getName() + " "
+                    + BritishWildlifeAssociation.observations.get(i).getAnimal().getThreatLevel());
+        }
     }
 
     /**
@@ -70,7 +95,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        lstObservations.setModel(ModelViewController.obsList);
+        lstObservations.setModel(obsList);
         jScrollPane1.setViewportView(lstObservations);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -140,7 +165,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        lstAnimals.setModel(ModelViewController.animList);
+        lstAnimals.setModel(animList);
         jScrollPane2.setViewportView(lstAnimals);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -206,10 +231,10 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        lstProfessional.setModel(ModelViewController.profList);
+        lstProfessional.setModel(profList);
         jScrollPane3.setViewportView(lstProfessional);
 
-        lstVolunteer.setModel(ModelViewController.volList);
+        lstVolunteer.setModel(volList);
         jScrollPane4.setViewportView(lstVolunteer);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
