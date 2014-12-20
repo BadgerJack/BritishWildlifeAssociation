@@ -15,20 +15,29 @@ public class GUI extends javax.swing.JFrame {
     DefaultListModel obsList = new DefaultListModel();
 
     /**
-     * Creates new form GUI
-     * and populates with hard coded values
+     * Creates new form GUI and populates with hard coded values
      */
     public GUI() {
         initComponents();
 
-        for (int i = 0; i < 3; ++i) {
+        for (int i = 0; i < BritishWildlifeAssociation.animals.size(); ++i) {
             animList.addElement(BritishWildlifeAssociation.animals.get(i).getName());
         }
-        profList.addElement(BritishWildlifeAssociation.professionals.get(0).getPrevStatus().getFirstName());
-        for (int i = 0; i < 3; ++i) {
-            volList.addElement(BritishWildlifeAssociation.volunteers.get(i).getFirstName());
+        for (int i = 0; i < BritishWildlifeAssociation.professionals.size(); ++i) {
+            profList.addElement(BritishWildlifeAssociation.professionals.get(i).getPrevStatus().getFirstName() + " "
+                    + BritishWildlifeAssociation.professionals.get(i).getPrevStatus().getLastName() + " "
+                    + BritishWildlifeAssociation.professionals.get(i).getPrevStatus().getAddress()
+            );
         }
-        obsList.addElement(BritishWildlifeAssociation.observations.get(0).getAnimal().getName());
+        for (int i = 0; i < BritishWildlifeAssociation.volunteers.size(); ++i) {
+            volList.addElement(BritishWildlifeAssociation.volunteers.get(i).getFirstName() + " "
+                    + BritishWildlifeAssociation.volunteers.get(i).getLastName() + " "
+                    + BritishWildlifeAssociation.volunteers.get(i).getAddress());
+        }
+        for (int i = 0; i < BritishWildlifeAssociation.observations.size(); ++i) {
+            obsList.addElement(BritishWildlifeAssociation.observations.get(i).getAnimal().getName() + " "
+                    + BritishWildlifeAssociation.observations.get(i).getAnimal().getThreatLevel());
+        }
     }
 
     /**
