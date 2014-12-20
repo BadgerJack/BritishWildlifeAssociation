@@ -20,10 +20,11 @@ public class Controller {
 
     //Functions for controlling Animal objects
     static void createAnimal(String newName, String newThreatLevel) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int y = Integer.parseInt(newThreatLevel);
+        animals.add(new Animal(newName, y));
     }
 
-    static void editAnimal(String newName, String newThreatLevel) {
+    static void editAnimal(Animal editedAnimal, String newName, String newThreatLevel) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
