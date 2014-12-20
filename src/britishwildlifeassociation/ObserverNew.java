@@ -114,7 +114,7 @@ public class ObserverNew extends javax.swing.JFrame {
         if ((txtNameFirst.getText().isEmpty() == false || txtNameLast.getText().isEmpty() == false
                 || txtAddress.getText().isEmpty() == false) && (txtEmail.getText().isEmpty() == false
                 || txtPhone.getText().isEmpty() == false)) {
-            ModelViewController.createObserver(txtNameFirst.getText(), txtNameLast.getText(),
+            Controller.createObserver(txtNameFirst.getText(), txtNameLast.getText(),
                     txtEmail.getText(), txtPhone.getText(), txtAddress.getText());
             this.dispose();
         } else {

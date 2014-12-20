@@ -88,7 +88,7 @@ public class AnimalNew extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         if (txtName.getText().isEmpty() == false || txtThreatLevel.getText().isEmpty() == false) {
-            ModelViewController.createAnimal(txtName.getText(), txtThreatLevel.getText());
+            Controller.createAnimal(txtName.getText(), txtThreatLevel.getText());
             this.dispose();
         }
     }//GEN-LAST:event_btnSaveActionPerformed

@@ -114,7 +114,7 @@ public class ObservationCallNew extends javax.swing.JFrame {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         if (txtAnimal.getText().isEmpty() == false || txtLocation.getText().isEmpty() == false
                 || txtStart.getText().isEmpty() == false) {
-            ModelViewController.createObservationCall(txtAnimal.getText(), txtLocation.getText(),
+            Controller.createObservationCall(txtAnimal.getText(), txtLocation.getText(),
                     txtStart.getText(), txtEnd.getText(), txtDescription.getText());
             this.dispose();
         }

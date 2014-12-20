@@ -131,7 +131,7 @@ public class ObservationNew extends javax.swing.JFrame {
         if (txtAnimal.getText().isEmpty() == false || txtLocation.getText().isEmpty() == false
                 || txtDate.getText().isEmpty() == false || txtObserver.getText().isEmpty() == false
                 || txtConfidence.getText().isEmpty() == false) {
-            ModelViewController.createObservation(txtAnimal.getText(), txtObserver.getText(),
+            Controller.createObservation(txtAnimal.getText(), txtObserver.getText(),
                     txtDate.getText(), txtLocation.getText(), txtConfidence.getText(),
                     chkProfessional.isSelected(), txtADescription.getText());
             this.dispose();

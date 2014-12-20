@@ -144,7 +144,7 @@ public class ObservationEdit extends javax.swing.JFrame {
         if (txtAnimal.getText().isEmpty() == false || txtLocation.getText().isEmpty() == false
                 || txtDate.getText().isEmpty() == false || txtObserver.getText().isEmpty() == false
                 || txtConfidence.getText().isEmpty() == false) {
-            ModelViewController.editObservation(txtAnimal.getText(), txtObserver.getText(),
+            Controller.editObservation(txtAnimal.getText(), txtObserver.getText(),
                     txtDate.getText(), txtLocation.getText(), txtConfidence.getText(),
                     chkProfessional.isSelected(), txtADescription.getText());
             this.dispose();
@@ -155,7 +155,7 @@ public class ObservationEdit extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Delete Animal", JOptionPane.YES_NO_OPTION) == 1) {
-            ModelViewController.deleteObservation(txtAnimal.getText(), txtObserver.getText(), txtDate.getText());
+            Controller.deleteObservation(txtAnimal.getText(), txtObserver.getText(), txtDate.getText());
         }
         this.dispose();
     }//GEN-LAST:event_btnDeleteActionPerformed

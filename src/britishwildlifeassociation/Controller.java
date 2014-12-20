@@ -9,7 +9,7 @@ package britishwildlifeassociation;
  * preventing users from directly interfacing with internal classes.
  *
  */
-public class ModelViewController {
+public class Controller {
 
     //Functions for controlling Animal objects
     static void createAnimal(String newName, String newThreatLevel) {

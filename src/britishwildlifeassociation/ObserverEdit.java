@@ -123,7 +123,7 @@ public class ObserverEdit extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Delete Animal", JOptionPane.YES_NO_OPTION) == 1) {
-            ModelViewController.deleteObserver(txtNameFirst.getText(), txtNameLast.getText(), txtEmail.getText());
+            Controller.deleteObserver(txtNameFirst.getText(), txtNameLast.getText(), txtEmail.getText());
         }
         this.dispose();
     }//GEN-LAST:event_btnDeleteActionPerformed
@@ -132,7 +132,7 @@ public class ObserverEdit extends javax.swing.JFrame {
         if ((txtNameFirst.getText().isEmpty() == false || txtNameLast.getText().isEmpty() == false
                 || txtAddress.getText().isEmpty() == false) && (txtEmail.getText().isEmpty() == false
                 || txtPhone.getText().isEmpty() == false)) {
-            ModelViewController.editObserver(txtNameFirst.getText(), txtNameLast.getText(),
+            Controller.editObserver(txtNameFirst.getText(), txtNameLast.getText(),
                     txtEmail.getText(), txtPhone.getText(), txtAddress.getText());
             this.dispose();
         } else {
