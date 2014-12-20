@@ -30,11 +30,13 @@ public class BritishWildlifeAssociation {
     static ArrayList<Animal> animals;
     static ArrayList<Volunteer> volunteers;
     static ArrayList<Professional> professionals;
+    static ArrayList<Observation> observations;
 
     public static void main(String[] args) {
         animals = new ArrayList<>();
         volunteers = new ArrayList<>();
         professionals = new ArrayList<>();
+        observations = new ArrayList<>();
         
         initHardCodeData();
         GUI dash = new GUI();
@@ -58,6 +60,8 @@ public class BritishWildlifeAssociation {
         Volunteer v = new Volunteer("Tom","Baker","Watchtower, Fort Boyard","N/A","jellybeans@hotmail.com");
         //keep as date or set long?
         professionals.add(new Professional(date.getTime(), date.getTime(), 1200, 0, v));
+        
+        observations.add(new Observation(animals.get(0), volunteers.get(0), date.getTime(), "Somewhere", "Hordes of bees", 1, false));
     }
 
 }

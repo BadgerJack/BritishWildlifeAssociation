@@ -12,6 +12,7 @@ public class GUI extends javax.swing.JFrame {
     DefaultListModel animList = new DefaultListModel();
     DefaultListModel profList = new DefaultListModel();
     DefaultListModel volList = new DefaultListModel();
+    DefaultListModel obsList = new DefaultListModel();
 
     /**
      * Creates new form GUI
@@ -27,6 +28,7 @@ public class GUI extends javax.swing.JFrame {
         for (int i = 0; i < 3; ++i) {
             volList.addElement(BritishWildlifeAssociation.volunteers.get(i).getFirstName());
         }
+        obsList.addElement(BritishWildlifeAssociation.observations.get(0).getAnimal().getName());
     }
 
     /**
@@ -84,6 +86,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        lstObservations.setModel(obsList);
         jScrollPane1.setViewportView(lstObservations);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

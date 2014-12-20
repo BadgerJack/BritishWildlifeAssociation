@@ -1,7 +1,5 @@
 package britishwildlifeassociation;
 
-import java.util.Date;
-
 /**
  *
  * @author hobbes
@@ -10,7 +8,7 @@ public class Observation {
 
     Animal animal;
     Observer observer;
-    Date timestamp;
+    long timestamp;
     String location, description;
     int confidence;
     boolean professional;
@@ -24,7 +22,7 @@ public class Observation {
     public Observation() {
     }
 
-    public Observation(Animal animal, Observer observer, Date timestamp, String location, String description, int confidence, boolean professional) {
+    public Observation(Animal animal, Observer observer, long timestamp, String location, String description, int confidence, boolean professional) {
         this.animal = animal;
         this.observer = observer;
         this.timestamp = timestamp;
@@ -51,10 +49,10 @@ public class Observation {
     public void setObserver(Observer observer) {
         this.observer = observer;
     }
-    public Date getTimestamp() {
+    public long getTimestamp() {
         return timestamp;
     }
-    public void setTimestamp(Date timestamp) {
+    public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
     }
     public String getLocation() {
