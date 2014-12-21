@@ -306,8 +306,21 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNewObservationActionPerformed
 
     private void btnEditObservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditObservationActionPerformed
-        JFrame editObs = new ObservationEdit();
-        editObs.setVisible(true);
+        if (lstObservations.isSelectionEmpty() == false) {
+            Observation observation = null;
+
+            for (Animal animal : Controller.animals) {
+                for (Observation obs : animal.getAnnualObservations()) {
+                    if (obs.produceDescriptionString() == lstObservations.getSelectedValue()) {
+                        observation = obs;
+                        break;
+                    }
+                }
+            }
+
+            JFrame editObs = new ObservationEdit(observation);
+            editObs.setVisible(true);
+        }
     }//GEN-LAST:event_btnEditObservationActionPerformed
 
     private void btnAddAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddAnimalActionPerformed
@@ -340,7 +353,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNewObserverActionPerformed
 
     private void btnEditObserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditObserverActionPerformed
-        JFrame editObserver = new ObserverEdit();
+        JFrame editObserver = new ObserverEdit(new Volunteer());
         editObserver.setVisible(true);
     }//GEN-LAST:event_btnEditObserverActionPerformed
 

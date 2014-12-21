@@ -20,6 +20,25 @@ public class ObservationEdit extends javax.swing.JFrame {
     public ObservationEdit(Observation o) {
         initComponents();
         obs = o;
+        Observer observ = obs.getObserver();
+
+        txtAnimal.setText(obs.getAnimal().getName());
+        txtLocation.setText(obs.getLocation());
+        txtDate.setText(obs.getTimestamp());
+        if (observ instanceof Professional == true) {
+            txtObserver.setText(((Professional) observ).getPrevStatus().getFirstName() + " "
+                    + ((Professional) observ).getPrevStatus().getLastName());
+        } else {
+            txtObserver.setText(((Volunteer) observ).getFirstName() + " "
+                    + ((Volunteer) observ).getLastName());
+        }
+        txtConfidence.setText(obs.getConfidence());
+        txtADescription.setText(obs.getDescription());
+        if (chkProfessional.isSelected()) {
+            chkProfessional.setSelected(true);
+        } else {
+            chkProfessional.setSelected(false);
+        }
     }
 
     /**

@@ -47,13 +47,11 @@ public class Controller {
     //Functions for controlling Observation objects
     static void createObservation(String newAnimalName, String newObserverName, String newDate, String newLocation, String newConfidence, boolean newProfessional, String newDescription) {
         Observer obs;
-        int con = Integer.parseInt(newConfidence);
-
         obs = determineObserver(newObserverName, newProfessional);
 
         for (Animal animal : animals) {
             if (animal.getName().equals(newAnimalName)) {
-                animal.annualObservations.add(new Observation(animal, obs, newDate, newLocation, newDescription, con, newProfessional));
+                animal.annualObservations.add(new Observation(animal, obs, newDate, newLocation, newDescription, newConfidence, newProfessional));
                 break;
             }
         }
@@ -64,12 +62,10 @@ public class Controller {
         Observer observ;
         observ = determineObserver(newObserverName, newProfessional);
 
-        int y = Integer.parseInt(newConfidence);
-
         for (Animal animal : animals) {
             if (animal.getName().equals(animalName)) {
                 animal.getAnnualObservations().remove(obs);
-                animal.getAnnualObservations().add(new Observation(animal, observ, newDate, newLocation, newDescription, y, newProfessional));
+                animal.getAnnualObservations().add(new Observation(animal, observ, newDate, newLocation, newDescription, newConfidence, newProfessional));
             }
         }
     }

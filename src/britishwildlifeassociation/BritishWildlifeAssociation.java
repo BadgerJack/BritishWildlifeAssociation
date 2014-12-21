@@ -37,41 +37,6 @@ public class BritishWildlifeAssociation {
 
         initHardCodeData();
 
-        Controller.animals.add(new Animal("Penguin", 3));
-        for (Animal animal : Controller.animals) {
-            if ("Penguin".equals(animal.getName())) {
-                animal.setThreatLevel(2);
-                break;
-            }
-        }
-
-        Controller.volunteers.add(new Volunteer("M", "S", "24", "0000", "bees@bees"));
-        for (Volunteer volunteer : Controller.volunteers) {
-            if ("M".equals(volunteer.getFirstName()) && "S".equals(volunteer.getLastName())) {
-                volunteer.setFirstName("P");
-                Controller.professionals.add(new Professional("start", "end", 900, volunteer));
-                Controller.volunteers.remove(volunteer);
-                break;
-            }
-
-        }
-
-        for (Professional professional : Controller.professionals) {
-            if (("P".equals(professional.getPrevStatus().getFirstName()) && ("S".equals(professional.getPrevStatus().getLastName())))) {
-                professional.getPrevStatus().setLastName("C");
-                Controller.volunteers.add(professional.getPrevStatus());
-                Controller.professionals.remove(professional);
-                break;
-            }
-
-        }
-
-        for (Volunteer volunteer : Controller.volunteers) {
-            if ("P".equals(volunteer.getFirstName()) && "C".equals(volunteer.getLastName())) {
-                volunteer.setAddress("15");
-                break;
-            }
-        }
         GUI dash = new GUI();
         dash.setVisible(true);
     }
@@ -93,7 +58,7 @@ public class BritishWildlifeAssociation {
         //keep as date or set long?
         Controller.professionals.add(new Professional("start", "end", 1200, v));
 
-        Controller.animals.get(0).getAnnualObservations().add(new Observation(Controller.animals.get(0), Controller.volunteers.get(0), "observationtime", "Somewhere", "Hordes of bees", 1, false));
+        Controller.animals.get(0).getAnnualObservations().add(new Observation(Controller.animals.get(0), Controller.volunteers.get(0), "observationtime", "Somewhere", "Hordes of bees", "1", false));
     }
 
 }

@@ -8,9 +8,7 @@ public class Observation {
 
     Animal animal;
     Observer observer;
-    String timestamp;
-    String location, description;
-    int confidence;
+    String timestamp, location, description, confidence;
     boolean professional;
 
     /*
@@ -22,7 +20,7 @@ public class Observation {
     public Observation() {
     }
 
-    public Observation(Animal animal, Observer observer, String timestamp, String location, String description, int confidence, boolean professional) {
+    public Observation(Animal animal, Observer observer, String timestamp, String location, String description, String confidence, boolean professional) {
         this.animal = animal;
         this.observer = observer;
         this.timestamp = timestamp;
@@ -77,11 +75,11 @@ public class Observation {
         this.description = description;
     }
 
-    public int getConfidence() {
+    public String getConfidence() {
         return confidence;
     }
 
-    public void setConfidence(int confidence) {
+    public void setConfidence(String confidence) {
         this.confidence = confidence;
     }
 
