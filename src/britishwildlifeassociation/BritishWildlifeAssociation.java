@@ -56,7 +56,7 @@ public class BritishWildlifeAssociation {
 
         Volunteer v = new Volunteer("Tom", "Baker", "Watchtower, Fort Boyard", "N/A", "jellybeans@hotmail.com");
         //keep as date or set long?
-        Controller.professionals.add(new Professional("start", "end", 1200, v));
+        Controller.professionals.add(new Professional("26 Dec 2012", "31 Jun 2015", 1200, v));
 
         Controller.animals.get(0).getAnnualObservations().add(new Observation(Controller.animals.get(0), Controller.volunteers.get(0), "observationtime", "Somewhere", "Hordes of bees", "1", false));
     }

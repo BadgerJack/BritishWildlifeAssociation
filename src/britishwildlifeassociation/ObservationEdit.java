@@ -204,7 +204,7 @@ public class ObservationEdit extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Delete Animal", JOptionPane.YES_NO_OPTION) == 1) {
+        if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Delete Animal", JOptionPane.YES_NO_OPTION) == 0) {
             Controller.deleteObservation(obs, txtAnimal.getText(), txtObserver.getText(), txtDate.getText());
         }
         Controller.populate();

@@ -120,8 +120,8 @@ public class Controller {
         for (int i = 0; i < animals.size(); ++i) {
             GUI.animList.addElement(animals.get(i).produceDescriptionString());
             if (animals.get(i).getAnnualObservations().isEmpty() == false) {
-                for (int x = 0; x < animals.get(x).getAnnualObservations().size(); ++x) {
-                    GUI.obsList.addElement(animals.get(i).getAnnualObservations().get(x).produceDescriptionString());
+                for (Observation o : animals.get(i).getAnnualObservations()) {
+                    GUI.obsList.addElement(o.produceDescriptionString());
                 }
             }
         }
@@ -135,7 +135,6 @@ public class Controller {
 
     static Observer determineObserver(String obsName, boolean prof) {
         Observer o = null;
-        //Determine observer. Could become own function if used often.
         if (prof == true) {
             for (Professional observer : professionals) {
                 if ((observer.getPrevStatus().getFirstName() + " " + observer.getPrevStatus().getLastName()).equals(obsName)) {

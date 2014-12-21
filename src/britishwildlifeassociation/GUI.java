@@ -311,7 +311,7 @@ public class GUI extends javax.swing.JFrame {
 
             for (Animal animal : Controller.animals) {
                 for (Observation obs : animal.getAnnualObservations()) {
-                    if (obs.produceDescriptionString() == lstObservations.getSelectedValue()) {
+                    if (obs.produceDescriptionString().equals(lstObservations.getSelectedValue())) {
                         observation = obs;
                         break;
                     }
