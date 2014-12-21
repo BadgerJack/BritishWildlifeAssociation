@@ -60,17 +60,13 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="514" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="574" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtObservationSearch" max="32767" attributes="0"/>
-                              <Component id="btnNewObservation" max="32767" attributes="0"/>
-                              <Component id="btnEditObservation" alignment="1" min="-2" pref="156" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnNewObservation" max="32767" attributes="0"/>
+                          <Component id="btnEditObservation" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -82,11 +78,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtObservationSearch" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                       <Component id="btnNewObservation" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnEditObservation" min="-2" max="-2" attributes="0"/>
@@ -96,8 +88,6 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="txtObservationSearch">
-            </Component>
             <Component class="javax.swing.JButton" name="btnNewObservation">
               <Properties>
                 <Property name="text" type="java.lang.String" value="New Observation"/>
@@ -139,11 +129,6 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Search"/>
-              </Properties>
-            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel2">
@@ -160,22 +145,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" pref="534" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="btnViewAlertHistory" alignment="1" min="-2" pref="124" max="-2" attributes="0"/>
-                              <Component id="btnIssueAlert" alignment="1" min="-2" pref="124" max="-2" attributes="0"/>
-                              <Component id="btnViewObservations" alignment="1" min="-2" pref="124" max="-2" attributes="0"/>
-                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="btnAddAnimal" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnEditAnimal" alignment="1" min="-2" pref="124" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="txtAnimalSearch" alignment="1" min="-2" pref="124" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" pref="574" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnAddAnimal" alignment="1" max="32767" attributes="0"/>
+                          <Component id="btnEditAnimal" alignment="1" max="32767" attributes="0"/>
+                          <Component id="btnIssueAlert" alignment="1" max="32767" attributes="0"/>
+                          <Component id="btnViewAlertHistory" alignment="1" pref="156" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -187,17 +165,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtAnimalSearch" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                       <Component id="btnAddAnimal" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnEditAnimal" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnViewObservations" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       <Component id="btnIssueAlert" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnViewAlertHistory" min="-2" max="-2" attributes="0"/>
@@ -207,8 +179,6 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="txtAnimalSearch">
-            </Component>
             <Component class="javax.swing.JButton" name="btnAddAnimal">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add Animal"/>
@@ -225,17 +195,9 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditAnimalActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnViewObservations">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="View Observations"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewObservationsActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JButton" name="btnViewAlertHistory">
               <Properties>
-                <Property name="text" type="java.lang.String" value="View Alert History"/>
+                <Property name="text" type="java.lang.String" value="View Alerts"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewAlertHistoryActionPerformed"/>
@@ -265,11 +227,6 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Search"/>
-              </Properties>
-            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel3">
@@ -286,25 +243,17 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jScrollPane4" pref="534" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jScrollPane4" pref="574" max="32767" attributes="0"/>
                           <Component id="jScrollPane3" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="btnMakeProfessional" min="-2" pref="124" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="btnEditObserver" alignment="1" min="-2" pref="124" max="-2" attributes="0"/>
-                                      <Component id="btnNewObserver" alignment="1" min="-2" pref="124" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="txtObserverSearch" min="-2" pref="124" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="18" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="btnNewObserver" pref="156" max="32767" attributes="0"/>
+                          <Component id="btnEditObserver" alignment="1" max="32767" attributes="0"/>
+                          <Component id="btnMakeProfessional" alignment="1" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -315,10 +264,6 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jScrollPane3" alignment="1" min="-2" pref="160" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtObserverSearch" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btnNewObserver" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnEditObserver" min="-2" max="-2" attributes="0"/>
@@ -334,8 +279,6 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="txtObserverSearch">
-            </Component>
             <Component class="javax.swing.JButton" name="btnEditObserver">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit Observer"/>
@@ -354,7 +297,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnMakeProfessional">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Make Professional"/>
+                <Property name="text" type="java.lang.String" value="Give Contract"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMakeProfessionalActionPerformed"/>
@@ -398,11 +341,6 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel3">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Search"/>
-              </Properties>
-            </Component>
           </SubComponents>
         </Container>
       </SubComponents>
