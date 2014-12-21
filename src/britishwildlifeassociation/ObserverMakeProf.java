@@ -7,10 +7,11 @@ import javax.swing.JOptionPane;
  * @author hobbes
  */
 public class ObserverMakeProf extends javax.swing.JFrame {
-
+    
     Volunteer volun;
-
+    
     public ObserverMakeProf() {
+        initComponents();
     }
 
     /**
@@ -19,6 +20,8 @@ public class ObserverMakeProf extends javax.swing.JFrame {
     public ObserverMakeProf(Volunteer v) {
         initComponents();
         volun = v;
+        
+        txtName.setText(volun.getFirstName() + " " + volun.getLastName());
     }
 
     /**

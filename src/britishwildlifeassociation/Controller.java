@@ -33,12 +33,12 @@ public class Controller {
     }
 
     //Functions for controlling ObservationCall objects
-    static void createObservationCall(String newAnimalName, String newLocation, String start, String end, String newDescription) {
-        for (Animal animal : animals) {
-            if (animal.getName().equals(newAnimalName)) {
-                animal.getCallsHistory().add(new ObservationCall(start, end, newLocation, newDescription));
+    static void createObservationCall(Animal newAnimalName, String newLocation, String start, String end, String newDescription) {
+        for (Animal anim : animals) {
+            if (anim.equals(newAnimalName)) {
+                anim.getCallsHistory().add(new ObservationCall(start, end, newLocation, newDescription));
+                break;
             }
-            break;
         }
     }
 

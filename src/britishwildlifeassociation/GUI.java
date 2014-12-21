@@ -388,8 +388,18 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditObserverActionPerformed
 
     private void btnMakeProfessionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMakeProfessionalActionPerformed
-        JFrame makeProf = new ObserverMakeProf();
-        makeProf.setVisible(true);
+        if (lstVolunteer.isSelectionEmpty() == false) {
+            Volunteer volun = null;
+
+            for (Volunteer volunteer : Controller.volunteers) {
+                if (volunteer.produceDescriptionString().equals(lstVolunteer.getSelectedValue())) {
+                    volun = volunteer;
+                    break;
+                }
+            }
+            JFrame makeProf = new ObserverMakeProf(volun);
+            makeProf.setVisible(true);
+        }
     }//GEN-LAST:event_btnMakeProfessionalActionPerformed
 
     /**

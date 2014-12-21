@@ -6,6 +6,8 @@ package britishwildlifeassociation;
  */
 public class ObservationCallNew extends javax.swing.JFrame {
 
+    Animal animal;
+
     /**
      * Creates new form ObservationCallNew
      */
@@ -15,8 +17,8 @@ public class ObservationCallNew extends javax.swing.JFrame {
 
     public ObservationCallNew(Animal anim) {
         initComponents();
-        
-        txtAnimal.setText(anim.getName());
+        animal = anim;
+        txtAnimal.setText(animal.getName());
     }
 
     /**
@@ -146,7 +148,7 @@ public class ObservationCallNew extends javax.swing.JFrame {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         if (txtAnimal.getText().isEmpty() == false || txtLocation.getText().isEmpty() == false
                 || txtStart.getText().isEmpty() == false) {
-            Controller.createObservationCall(txtAnimal.getText(), txtLocation.getText(),
+            Controller.createObservationCall(animal, txtLocation.getText(),
                     txtStart.getText(), txtEnd.getText(), txtDescription.getText());
             Controller.populate();
             this.dispose();

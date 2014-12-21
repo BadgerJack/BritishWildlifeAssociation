@@ -19,6 +19,7 @@ public class ObservationCallList extends javax.swing.JFrame {
     }
 
     public ObservationCallList(Animal a) {
+        callsList.clear();
         anim = a;
 
         for (ObservationCall call : anim.getCallsHistory()) {
@@ -43,6 +44,7 @@ public class ObservationCallList extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Alerts List");
 
+        txtAlertList.setModel(callsList);
         jScrollPane1.setViewportView(txtAlertList);
 
         btnCancel.setText("Return");
