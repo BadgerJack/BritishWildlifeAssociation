@@ -143,6 +143,7 @@ public class ObserverNew extends javax.swing.JFrame {
                 || txtPhone.getText().isEmpty() == false)) {
             Controller.createObserver(txtNameFirst.getText(), txtNameLast.getText(),
                     txtEmail.getText(), txtPhone.getText(), txtAddress.getText());
+            Controller.populate();
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "A required field is missing");

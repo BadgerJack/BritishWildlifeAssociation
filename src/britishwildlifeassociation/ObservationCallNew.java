@@ -142,6 +142,7 @@ public class ObservationCallNew extends javax.swing.JFrame {
                 || txtStart.getText().isEmpty() == false) {
             Controller.createObservationCall(txtAnimal.getText(), txtLocation.getText(),
                     txtStart.getText(), txtEnd.getText(), txtDescription.getText());
+            Controller.populate();
             this.dispose();
         }
     }//GEN-LAST:event_btnSaveActionPerformed

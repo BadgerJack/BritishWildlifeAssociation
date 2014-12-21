@@ -8,11 +8,18 @@ import javax.swing.JOptionPane;
  */
 public class ObservationEdit extends javax.swing.JFrame {
 
+    Observation obs;
+
     /**
      * Creates new form ObservationEdit
      */
     public ObservationEdit() {
         initComponents();
+    }
+
+    public ObservationEdit(Observation o) {
+        initComponents();
+        obs = o;
     }
 
     /**
@@ -167,9 +174,10 @@ public class ObservationEdit extends javax.swing.JFrame {
         if (txtAnimal.getText().isEmpty() == false || txtLocation.getText().isEmpty() == false
                 || txtDate.getText().isEmpty() == false || txtObserver.getText().isEmpty() == false
                 || txtConfidence.getText().isEmpty() == false) {
-            Controller.editObservation(txtAnimal.getText(), txtObserver.getText(),
+            Controller.editObservation(obs, txtAnimal.getText(), txtObserver.getText(),
                     txtDate.getText(), txtLocation.getText(), txtConfidence.getText(),
                     chkProfessional.isSelected(), txtADescription.getText());
+            Controller.populate();
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "A required field is missing");
@@ -178,8 +186,9 @@ public class ObservationEdit extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Delete Animal", JOptionPane.YES_NO_OPTION) == 1) {
-            Controller.deleteObservation(txtAnimal.getText(), txtObserver.getText(), txtDate.getText());
+            Controller.deleteObservation(obs, txtAnimal.getText(), txtObserver.getText(), txtDate.getText());
         }
+        Controller.populate();
         this.dispose();
     }//GEN-LAST:event_btnDeleteActionPerformed
 

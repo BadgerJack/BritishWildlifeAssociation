@@ -25,11 +25,13 @@ public class Controller {
     }
 
     static void editAnimal(Animal editedAnimal, String newName, String newThreatLevel) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int x = Integer.parseInt(newThreatLevel);
+        animals.remove(editedAnimal);
+        animals.add(new Animal(newName, x));
     }
 
-    static void deleteAnimal(String animalName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    static void deleteAnimal(Animal editedAnimal) {
+        animals.remove(editedAnimal);
     }
 
     //Functions for controlling ObservationCall objects
@@ -46,25 +48,11 @@ public class Controller {
 
     //Functions for controlling Observation objects
     static void createObservation(String newAnimalName, String newObserverName, String newDate, String newLocation, String newConfidence, boolean newProfessional, String newDescription) {
-        Observer obs = null;
+        Observer obs;
         int con = Integer.parseInt(newConfidence);
         long da = Long.parseLong(newDate);
-        //Determine observer. Could become own function if used often.
-        if (newProfessional == true) {
-            for (Professional observer : professionals) {
-                if ((observer.getPrevStatus().getFirstName() + " " + observer.getPrevStatus().getLastName()).equals(newObserverName)) {
-                    obs = observer;
-                    break;
-                }
-            }
-        } else if (newProfessional == false) {
-            for (Volunteer observer : volunteers) {
-                if ((observer.getFirstName() + " " + observer.getLastName()).equals(newObserverName)) {
-                    obs = observer;
-                    break;
-                }
-            }
-        }
+
+        obs = determineObserver(newObserverName, newProfessional);
 
         for (Animal animal : animals) {
             if (animal.getName().equals(newAnimalName)) {
@@ -74,12 +62,29 @@ public class Controller {
         }
     }
 
-    static void editObservation(String newAnimalName, String newObserverName, String newDate, String newLocation, String newConfidence, boolean newProfessional, String newDescription) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    static void editObservation(Observation obs, String animalName, String newObserverName, String newDate, String newLocation, String newConfidence, boolean newProfessional, String newDescription) {
+
+        Observer observ;
+        observ = determineObserver(newObserverName, newProfessional);
+
+        long x = Long.parseLong(newDate);
+        int y = Integer.parseInt(newConfidence);
+
+        for (Animal animal : animals) {
+            if (animal.getName().equals(animalName)) {
+                animal.getAnnualObservations().remove(obs);
+                animal.getAnnualObservations().add(new Observation(animal, observ, x, newLocation, newDescription, y, newProfessional));
+            }
+        }
     }
 
-    static void deleteObservation(String animalName, String observerName, String observationDate) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    static void deleteObservation(Observation obs, String animalName, String observerName, String observationDate) {
+        for (Animal animal : animals) {
+            if (animal.getName().equals(animalName)) {
+                animal.getAnnualObservations().remove(obs);
+                break;
+            }
+        }
     }
 
     //Functions for controlling Observer objects
@@ -87,12 +92,25 @@ public class Controller {
         volunteers.add(new Volunteer(newForename, newSurname, newAddress, newPhone, newEmail));
     }
 
-    static void editObserver(String newForename, String newSurname, String newEmail, String newPhone, String newAddress) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    static void editObserver(Observer obs, String newForename, String newSurname, String newEmail, String newPhone, String newAddress) {
+        Volunteer v = new Volunteer(newForename, newSurname, newPhone, newAddress, newEmail);
+        if (obs instanceof Volunteer) {
+            volunteers.remove(obs);
+            volunteers.add(v);
+        } else if (obs instanceof Professional) {
+            for (Professional prof : professionals) {
+                if (prof.equals(obs)) {
+                    prof.setPrevStatus(v);
+                }
+            }
+        }
     }
 
-    static void deleteObserver(String forename, String surname, String newEmail) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    static void deleteObserver(Observer o) {
+        ArrayList<Observer> observers = new ArrayList<>();
+        observers.addAll(volunteers);
+        observers.addAll(professionals);
+        observers.remove(o);
     }
 
     static void makeProfObserver(Volunteer v, String newContractStart, String newContractEnd, String newSalary) {
@@ -100,9 +118,11 @@ public class Controller {
         long y = Long.parseLong(newContractEnd);
         int z = Integer.parseInt(newSalary);
         professionals.add(new Professional(x, y, z, v));
+        volunteers.remove(v);
     }
 
     static void populate() {
+        
         for (int i = 0; i < animals.size(); ++i) {
             GUI.animList.addElement(animals.get(i).getName());
         }
@@ -121,10 +141,26 @@ public class Controller {
             GUI.obsList.addElement(observations.get(i).getAnimal().getName() + " "
                     + observations.get(i).getAnimal().getThreatLevel());
         }
-
     }
 
-    static void populate(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    static Observer determineObserver(String obsName, boolean prof) {
+        Observer o = null;
+        //Determine observer. Could become own function if used often.
+        if (prof == true) {
+            for (Professional observer : professionals) {
+                if ((observer.getPrevStatus().getFirstName() + " " + observer.getPrevStatus().getLastName()).equals(obsName)) {
+                    o = observer;
+                    break;
+                }
+            }
+        } else if (prof == false) {
+            for (Volunteer observer : volunteers) {
+                if ((observer.getFirstName() + " " + observer.getLastName()).equals(obsName)) {
+                    o = observer;
+                    break;
+                }
+            }
+        }
+        return o;
     }
 }

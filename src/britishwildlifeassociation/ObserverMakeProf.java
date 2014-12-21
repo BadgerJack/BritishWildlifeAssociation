@@ -128,6 +128,7 @@ public class ObserverMakeProf extends javax.swing.JFrame {
                 || txtSalary.getText().isEmpty() == false) {
             Controller.makeProfObserver(volun, txtContractStart.getText(),
                     txtContractEnd.getText(), txtSalary.getText());
+            Controller.populate();
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "A required field is missing");

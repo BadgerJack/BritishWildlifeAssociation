@@ -124,14 +124,16 @@ public class AnimalEdit extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "A required field is missing");
         }
+        Controller.populate();
+        this.dispose();
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
 
         if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Delete Animal", JOptionPane.YES_NO_OPTION) == 1) {
-            Controller.deleteAnimal(txtName.getText());
+            Controller.deleteAnimal(currentAnim);
         }
-
+        Controller.populate();
         this.dispose();
     }//GEN-LAST:event_btnDeleteActionPerformed
 

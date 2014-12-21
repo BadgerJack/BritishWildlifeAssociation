@@ -8,11 +8,17 @@ import javax.swing.JOptionPane;
  */
 public class ObserverEdit extends javax.swing.JFrame {
 
+    Observer observ;
+
     /**
      * Creates new form ObserverEdit
      */
     public ObserverEdit() {
+    }
+
+    public ObserverEdit(Observer o) {
         initComponents();
+        observ = o;
     }
 
     /**
@@ -151,8 +157,9 @@ public class ObserverEdit extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Delete Animal", JOptionPane.YES_NO_OPTION) == 1) {
-            Controller.deleteObserver(txtNameFirst.getText(), txtNameLast.getText(), txtEmail.getText());
+            Controller.deleteObserver(observ);
         }
+        Controller.populate();
         this.dispose();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
@@ -160,8 +167,9 @@ public class ObserverEdit extends javax.swing.JFrame {
         if ((txtNameFirst.getText().isEmpty() == false || txtNameLast.getText().isEmpty() == false
                 || txtAddress.getText().isEmpty() == false) && (txtEmail.getText().isEmpty() == false
                 || txtPhone.getText().isEmpty() == false)) {
-            Controller.editObserver(txtNameFirst.getText(), txtNameLast.getText(),
+            Controller.editObserver(observ, txtNameFirst.getText(), txtNameLast.getText(),
                     txtEmail.getText(), txtPhone.getText(), txtAddress.getText());
+            Controller.populate();
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "A required field is missing");

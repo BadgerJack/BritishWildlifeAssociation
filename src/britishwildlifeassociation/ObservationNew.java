@@ -160,6 +160,7 @@ public class ObservationNew extends javax.swing.JFrame {
             Controller.createObservation(txtAnimal.getText(), txtObserver.getText(),
                     txtDate.getText(), txtLocation.getText(), txtConfidence.getText(),
                     chkProfessional.isSelected(), txtADescription.getText());
+            Controller.populate();
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "A required field is missing");
