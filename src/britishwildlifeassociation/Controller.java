@@ -20,14 +20,12 @@ public class Controller {
 
     //Functions for controlling Animal objects
     static void createAnimal(String newName, String newThreatLevel) {
-        int y = Integer.parseInt(newThreatLevel);
-        animals.add(new Animal(newName, y));
+        animals.add(new Animal(newName, newThreatLevel));
     }
 
     static void editAnimal(Animal editedAnimal, String newName, String newThreatLevel) {
-        int x = Integer.parseInt(newThreatLevel);
         animals.remove(editedAnimal);
-        animals.add(new Animal(newName, x));
+        animals.add(new Animal(newName, newThreatLevel));
     }
 
     static void deleteAnimal(Animal editedAnimal) {
@@ -38,7 +36,7 @@ public class Controller {
     static void createObservationCall(String newAnimalName, String newLocation, String start, String end, String newDescription) {
         for (Animal animal : animals) {
             if (animal.getName().equals(newAnimalName)) {
-                animal.callsHistory.add(new ObservationCall(start, end, newLocation, newDescription));
+                animal.getCallsHistory().add(new ObservationCall(start, end, newLocation, newDescription));
             }
             break;
         }

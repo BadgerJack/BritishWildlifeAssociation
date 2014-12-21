@@ -13,6 +13,12 @@ public class ObservationCallNew extends javax.swing.JFrame {
         initComponents();
     }
 
+    public ObservationCallNew(Animal anim) {
+        initComponents();
+        
+        txtAnimal.setText(anim.getName());
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

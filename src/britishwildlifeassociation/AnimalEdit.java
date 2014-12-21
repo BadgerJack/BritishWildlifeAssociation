@@ -21,6 +21,8 @@ public class AnimalEdit extends javax.swing.JFrame {
         initComponents();
         currentAnim = a;
 
+        txtName.setText(currentAnim.getName());
+        txtThreatLevel.setText(currentAnim.getThreatLevel());
     }
 
     /**
@@ -130,7 +132,7 @@ public class AnimalEdit extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
 
-        if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Delete Animal", JOptionPane.YES_NO_OPTION) == 1) {
+        if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Delete Animal", JOptionPane.YES_NO_OPTION) == 0) {
             Controller.deleteAnimal(currentAnim);
         }
         Controller.populate();

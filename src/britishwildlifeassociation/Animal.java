@@ -8,8 +8,7 @@ import java.util.ArrayList;
  */
 public class Animal {
 
-    String name;
-    int threatLevel;
+    String name, threatLevel;
     ArrayList<Observation> annualObservations;
     ArrayList<ObservationCall> callsHistory;
 
@@ -22,7 +21,7 @@ public class Animal {
     public Animal() {
     }
 
-    public Animal(String name, int threatLevel) {
+    public Animal(String name, String threatLevel) {
         this.name = name;
         this.threatLevel = threatLevel;
 
@@ -43,11 +42,11 @@ public class Animal {
         this.name = name;
     }
 
-    public int getThreatLevel() {
+    public String getThreatLevel() {
         return threatLevel;
     }
 
-    public void setThreatLevel(int threatLevel) {
+    public void setThreatLevel(String threatLevel) {
         this.threatLevel = threatLevel;
     }
 

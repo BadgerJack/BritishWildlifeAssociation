@@ -329,8 +329,18 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddAnimalActionPerformed
 
     private void btnEditAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditAnimalActionPerformed
-        JFrame editAnimal = new AnimalEdit();
-        editAnimal.setVisible(true);
+        if (lstAnimals.isSelectionEmpty() == false) {
+            Animal anim = null;
+
+            for (Animal animal : Controller.animals) {
+                if (animal.produceDescriptionString().equals(lstAnimals.getSelectedValue())) {
+                    anim = animal;
+                    break;
+                }
+            }
+            JFrame editAnimal = new AnimalEdit(anim);
+            editAnimal.setVisible(true);
+        }
     }//GEN-LAST:event_btnEditAnimalActionPerformed
 
     private void btnViewObservationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewObservationsActionPerformed
@@ -338,13 +348,33 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnViewObservationsActionPerformed
 
     private void btnIssueAlertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIssueAlertActionPerformed
-        JFrame newObsCall = new ObservationCallNew();
-        newObsCall.setVisible(true);
+        if (lstAnimals.isSelectionEmpty() == false) {
+            Animal anim = null;
+
+            for (Animal animal : Controller.animals) {
+                if (animal.produceDescriptionString().equals(lstAnimals.getSelectedValue())) {
+                    anim = animal;
+                    break;
+                }
+            }
+            JFrame newObsCall = new ObservationCallNew(anim);
+            newObsCall.setVisible(true);
+        }
     }//GEN-LAST:event_btnIssueAlertActionPerformed
 
     private void btnViewAlertHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewAlertHistoryActionPerformed
-        JFrame ObsCallList = new ObservationCallList();
-        ObsCallList.setVisible(true);
+        if (lstAnimals.isSelectionEmpty() == false) {
+            Animal anim = null;
+
+            for (Animal animal : Controller.animals) {
+                if (animal.produceDescriptionString().equals(lstAnimals.getSelectedValue())) {
+                    anim = animal;
+                    break;
+                }
+            }
+            JFrame ObsCallList = new ObservationCallList(anim);
+            ObsCallList.setVisible(true);
+        }
     }//GEN-LAST:event_btnViewAlertHistoryActionPerformed
 
     private void btnNewObserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewObserverActionPerformed
@@ -376,16 +406,21 @@ public class GUI extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

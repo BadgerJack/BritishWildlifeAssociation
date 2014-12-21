@@ -46,9 +46,9 @@ public class BritishWildlifeAssociation {
      when first running the program
      */
     static void initHardCodeData() {
-        Controller.animals.add(new Animal("Fox", 0));
-        Controller.animals.add(new Animal("Hedgehog", 1));
-        Controller.animals.add(new Animal("Rabbit", 1));
+        Controller.animals.add(new Animal("Fox", "0"));
+        Controller.animals.add(new Animal("Hedgehog", "1"));
+        Controller.animals.add(new Animal("Rabbit", "1"));
 
         Controller.volunteers.add(new Volunteer("Matt", "Smith", "23 Hamilton Gardens", "01626256312", "fezandbowtie@hotmail.co.uk"));
         Controller.volunteers.add(new Volunteer("David", "Tennant", "23 Hamilton Gardens", "01626256312", "awholenewspectrum@hotmail.com"));
