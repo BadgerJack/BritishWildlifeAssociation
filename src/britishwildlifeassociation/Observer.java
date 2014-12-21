@@ -4,9 +4,11 @@ package britishwildlifeassociation;
  *
  * @author hobbes
  *
- * This interface left intentionally blank
- * Used to reference child classes of the interface
- * 
+ * This interface left intentionally blank Used to reference child classes of
+ * the interface
+ *
  */
 public interface Observer {
+
+    public String produceDescriptionString();
 }

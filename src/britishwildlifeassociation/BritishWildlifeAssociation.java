@@ -93,7 +93,7 @@ public class BritishWildlifeAssociation {
         //keep as date or set long?
         Controller.professionals.add(new Professional(date.getTime(), date.getTime(), 1200, v));
 
-        Controller.observations.add(new Observation(Controller.animals.get(0), Controller.volunteers.get(0), date.getTime(), "Somewhere", "Hordes of bees", 1, false));
+        Controller.animals.get(0).getAnnualObservations().add(new Observation(Controller.animals.get(0), Controller.volunteers.get(0), date.getTime(), "Somewhere", "Hordes of bees", 1, false));
     }
 
 }

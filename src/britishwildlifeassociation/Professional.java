@@ -73,4 +73,9 @@ public class Professional implements Observer {
         this.prevStatus = prevStatus;
     }
 
+    @Override
+    public String produceDescriptionString() {
+        return prevStatus.produceDescriptionString();
+    }
+
 }

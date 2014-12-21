@@ -14,10 +14,10 @@ public class Animal {
     ArrayList<ObservationCall> callsHistory;
 
     /*
-    Constructor Methods
-    A default constructor (with no required input) is
-    useful for a variety of reasons; notably, Netbeans uses
-    them when binding code bundles
+     Constructor Methods
+     A default constructor (with no required input) is
+     useful for a variety of reasons; notably, Netbeans uses
+     them when binding code bundles
      */
     public Animal() {
     }
@@ -25,15 +25,15 @@ public class Animal {
     public Animal(String name, int threatLevel) {
         this.name = name;
         this.threatLevel = threatLevel;
-        
+
         this.annualObservations = new ArrayList();
         this.callsHistory = new ArrayList();
     }
 
     /*
-    Getters and Setters
-    Most of these will be set in the constructor,
-    but Sets allows us to edit an instance later
+     Getters and Setters
+     Most of these will be set in the constructor,
+     but Sets allows us to edit an instance later
      */
     public String getName() {
         return name;
@@ -70,12 +70,19 @@ public class Animal {
     }
 
     /*
-    Creates an observation alert regarding the current animal
-    Created here rather than in the main class as the list of calls
-    is stored locally for simple access
-    */
+     Creates an observation alert regarding the current animal
+     Created here rather than in the main class as the list of calls
+     is stored locally for simple access
+     */
     public ObservationCall issueCall(Animal animal) {
         animal = this;
         return null;
+    }
+
+    public String produceDescriptionString() {
+        String threat = String.valueOf(threatLevel);
+        String annual = String.valueOf(annualObservations.size());
+        String history = String.valueOf(callsHistory.size());
+        return name + " Threat:" + threat + " Observations:" + annual + " Calls:" + history;
     }
 }
