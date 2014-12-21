@@ -97,10 +97,11 @@ public class Controller {
     }
 
     static void deleteObserver(Observer o) {
-        ArrayList<Observer> observers = new ArrayList<>();
-        observers.addAll(volunteers);
-        observers.addAll(professionals);
-        observers.remove(o);
+        if (o instanceof Volunteer) {
+            volunteers.remove(o);
+        } else if (o instanceof Professional) {
+            professionals.remove(o);
+        }
     }
 
     static void makeProfObserver(Volunteer v, String newContractStart, String newContractEnd, String newSalary) {

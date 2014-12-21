@@ -229,9 +229,19 @@ public class GUI extends javax.swing.JFrame {
         });
 
         lstProfessional.setModel(profList);
+        lstProfessional.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lstProfessionalMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(lstProfessional);
 
         lstVolunteer.setModel(volList);
+        lstVolunteer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lstVolunteerMouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(lstVolunteer);
 
         jLabel3.setText("Search");
@@ -383,8 +393,29 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNewObserverActionPerformed
 
     private void btnEditObserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditObserverActionPerformed
-        JFrame editObserver = new ObserverEdit(new Volunteer());
-        editObserver.setVisible(true);
+        Observer volun = null;
+        if (lstVolunteer.isSelectionEmpty() == false) {
+            for (Volunteer volunteer : Controller.volunteers) {
+                if (volunteer.produceDescriptionString().equals(lstVolunteer.getSelectedValue())) {
+                    volun = volunteer;
+                    break;
+                }
+            }
+
+            JFrame editObserver = new ObserverEdit(volun);
+            editObserver.setVisible(true);
+
+        } else if (lstProfessional.isSelectionEmpty() == false) {
+            for (Professional professional : Controller.professionals) {
+                if (professional.produceDescriptionString().equals(lstProfessional.getSelectedValue())) {
+                    volun = professional;
+                    break;
+                }
+            }
+            
+            JFrame editObserver = new ObserverEdit(volun);
+            editObserver.setVisible(true);
+        }
     }//GEN-LAST:event_btnEditObserverActionPerformed
 
     private void btnMakeProfessionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMakeProfessionalActionPerformed
@@ -401,6 +432,14 @@ public class GUI extends javax.swing.JFrame {
             makeProf.setVisible(true);
         }
     }//GEN-LAST:event_btnMakeProfessionalActionPerformed
+
+    private void lstProfessionalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstProfessionalMouseClicked
+        lstVolunteer.clearSelection();
+    }//GEN-LAST:event_lstProfessionalMouseClicked
+
+    private void lstVolunteerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstVolunteerMouseClicked
+        lstProfessional.clearSelection();
+    }//GEN-LAST:event_lstVolunteerMouseClicked
 
     /**
      * @param args the command line arguments

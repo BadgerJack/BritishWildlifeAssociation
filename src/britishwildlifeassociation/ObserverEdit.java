@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 public class ObserverEdit extends javax.swing.JFrame {
 
     Observer observ;
+    Volunteer volun;
 
     /**
      * Creates new form ObserverEdit
@@ -19,6 +20,17 @@ public class ObserverEdit extends javax.swing.JFrame {
     public ObserverEdit(Observer o) {
         initComponents();
         observ = o;
+        if (observ instanceof Professional) {
+            volun = ((Professional) observ).getPrevStatus();
+        } else {
+            volun = ((Volunteer) observ);
+        }
+
+        txtNameFirst.setText(volun.getFirstName());
+        txtNameLast.setText(volun.getLastName());
+        txtEmail.setText(volun.getEmail());
+        txtPhone.setText(volun.getPhone());
+        txtAddress.setText(volun.getAddress());
     }
 
     /**
@@ -156,7 +168,7 @@ public class ObserverEdit extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Delete Animal", JOptionPane.YES_NO_OPTION) == 1) {
+        if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Delete Observer", JOptionPane.YES_NO_OPTION) == 0) {
             Controller.deleteObserver(observ);
         }
         Controller.populate();

@@ -373,6 +373,9 @@
                       <Connection code="profList" type="code"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lstProfessionalMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -389,6 +392,9 @@
                       <Connection code="volList" type="code"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lstVolunteerMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
