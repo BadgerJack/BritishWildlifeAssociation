@@ -1,6 +1,12 @@
 package britishwildlifeassociation;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -150,5 +156,11 @@ public class Controller {
             }
         }
         return o;
+    }
+
+    public Date getDate(String s) throws ParseException {
+        SimpleDateFormat form = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = form.parse(s);
+        return date;
     }
 }
