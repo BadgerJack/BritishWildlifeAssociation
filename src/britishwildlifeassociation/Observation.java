@@ -8,7 +8,7 @@ public class Observation {
 
     Animal animal;
     Observer observer;
-    long timestamp;
+    String timestamp;
     String location, description;
     int confidence;
     boolean professional;
@@ -22,7 +22,7 @@ public class Observation {
     public Observation() {
     }
 
-    public Observation(Animal animal, Observer observer, long timestamp, String location, String description, int confidence, boolean professional) {
+    public Observation(Animal animal, Observer observer, String timestamp, String location, String description, int confidence, boolean professional) {
         this.animal = animal;
         this.observer = observer;
         this.timestamp = timestamp;
@@ -53,11 +53,11 @@ public class Observation {
         this.observer = observer;
     }
 
-    public long getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(long timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 

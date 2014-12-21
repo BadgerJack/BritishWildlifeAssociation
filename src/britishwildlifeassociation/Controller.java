@@ -36,11 +36,9 @@ public class Controller {
 
     //Functions for controlling ObservationCall objects
     static void createObservationCall(String newAnimalName, String newLocation, String start, String end, String newDescription) {
-        long x = Long.parseLong(start);
-        long y = Long.parseLong(end);
         for (Animal animal : animals) {
             if (animal.getName().equals(newAnimalName)) {
-                animal.callsHistory.add(new ObservationCall(x, y, newLocation, newDescription));
+                animal.callsHistory.add(new ObservationCall(start, end, newLocation, newDescription));
             }
             break;
         }
@@ -50,13 +48,12 @@ public class Controller {
     static void createObservation(String newAnimalName, String newObserverName, String newDate, String newLocation, String newConfidence, boolean newProfessional, String newDescription) {
         Observer obs;
         int con = Integer.parseInt(newConfidence);
-        long da = Long.parseLong(newDate);
 
         obs = determineObserver(newObserverName, newProfessional);
 
         for (Animal animal : animals) {
             if (animal.getName().equals(newAnimalName)) {
-                animal.annualObservations.add(new Observation(animal, obs, da, newLocation, newDescription, con, newProfessional));
+                animal.annualObservations.add(new Observation(animal, obs, newDate, newLocation, newDescription, con, newProfessional));
                 break;
             }
         }
@@ -67,13 +64,12 @@ public class Controller {
         Observer observ;
         observ = determineObserver(newObserverName, newProfessional);
 
-        long x = Long.parseLong(newDate);
         int y = Integer.parseInt(newConfidence);
 
         for (Animal animal : animals) {
             if (animal.getName().equals(animalName)) {
                 animal.getAnnualObservations().remove(obs);
-                animal.getAnnualObservations().add(new Observation(animal, observ, x, newLocation, newDescription, y, newProfessional));
+                animal.getAnnualObservations().add(new Observation(animal, observ, newDate, newLocation, newDescription, y, newProfessional));
             }
         }
     }
@@ -114,10 +110,8 @@ public class Controller {
     }
 
     static void makeProfObserver(Volunteer v, String newContractStart, String newContractEnd, String newSalary) {
-        long x = Long.parseLong(newContractStart);
-        long y = Long.parseLong(newContractEnd);
         int z = Integer.parseInt(newSalary);
-        professionals.add(new Professional(x, y, z, v));
+        professionals.add(new Professional(newContractStart, newContractEnd, z, v));
         volunteers.remove(v);
     }
 

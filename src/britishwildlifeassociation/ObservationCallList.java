@@ -1,16 +1,30 @@
 package britishwildlifeassociation;
 
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author hobbes
  */
 public class ObservationCallList extends javax.swing.JFrame {
+    
+    Animal anim;
+    static DefaultListModel callsList = new DefaultListModel();
 
     /**
      * Creates new form ObservationCallList
      */
     public ObservationCallList() {
         initComponents();
+    }
+    
+    public ObservationCallList(Animal a) {
+        initComponents();
+        anim = a;
+        
+        for (ObservationCall call : anim.getCallsHistory()) {
+            callsList.addElement(call.produceDescriptionString());
+        }
     }
 
     /**

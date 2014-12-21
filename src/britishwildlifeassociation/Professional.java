@@ -6,7 +6,7 @@ package britishwildlifeassociation;
  */
 public class Professional implements Observer {
 
-    Long contractStart, contractEnd;
+    String contractStart, contractEnd;
     int salary, annObservations;
     Volunteer prevStatus;
 
@@ -20,7 +20,7 @@ public class Professional implements Observer {
     }
 //keep as Date or set long?
 
-    public Professional(Long contractStart, Long contractEnd, int salary, Volunteer prevStatus) {
+    public Professional(String contractStart, String contractEnd, int salary, Volunteer prevStatus) {
         this.contractStart = contractStart;
         this.contractEnd = contractEnd;
         this.salary = salary;
@@ -33,19 +33,19 @@ public class Professional implements Observer {
      Most of these will be set in the constructor,
      but Sets allows us to edit an instance later
      */
-    public Long getContractStart() {
+    public String getContractStart() {
         return contractStart;
     }
 
-    public void setContractStart(Long contractStart) {
+    public void setContractStart(String contractStart) {
         this.contractStart = contractStart;
     }
 
-    public Long getContractEnd() {
+    public String getContractEnd() {
         return contractEnd;
     }
 
-    public void setContractEnd(Long contractEnd) {
+    public void setContractEnd(String contractEnd) {
         this.contractEnd = contractEnd;
     }
 

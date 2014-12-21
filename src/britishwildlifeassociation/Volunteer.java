@@ -1,6 +1,6 @@
 package britishwildlifeassociation;
 
-import java.util.Date;
+import java.util.Calendar;
 
 /**
  *
@@ -8,8 +8,7 @@ import java.util.Date;
  */
 public class Volunteer implements Observer {
 
-    Date registrationDate;
-    String currentStatus;
+    String registrationDate, currentStatus;
 
     //These are the variables that should come from the Observer interface
     String firstName, lastName, address, phone, email;
@@ -30,7 +29,7 @@ public class Volunteer implements Observer {
         this.phone = phone;
         this.email = email;
 
-        this.registrationDate = null;
+        this.registrationDate = Calendar.getInstance().getTime().toString();
         this.currentStatus = "Active";
     }
 
@@ -39,11 +38,11 @@ public class Volunteer implements Observer {
      Most of these will be set in the constructor,
      but Sets allows us to edit an instance later
      */
-    public Date getRegistrationDate() {
+    public String getRegistrationDate() {
         return registrationDate;
     }
 
-    public void setRegistrationDate(Date registrationDate) {
+    public void setRegistrationDate(String registrationDate) {
         this.registrationDate = registrationDate;
     }
 

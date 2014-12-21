@@ -1,15 +1,12 @@
 package britishwildlifeassociation;
 
-import java.util.Date;
-
 /**
  *
  * @author hobbes
  */
 public class ObservationCall {
 
-    Long timeStart, timeEnd;
-    String location, reason;
+    String timeStart, timeEnd, location, reason;
 
     /*
      Constructor Methods
@@ -20,7 +17,7 @@ public class ObservationCall {
     public ObservationCall() {
     }
 
-    public ObservationCall(Long timeStart, Long timeEnd, String location, String reason) {
+    public ObservationCall(String timeStart, String timeEnd, String location, String reason) {
         this.timeStart = timeStart;
         this.timeEnd = timeEnd;
         this.location = location;
@@ -32,19 +29,19 @@ public class ObservationCall {
      Most of these will be set in the constructor,
      but Sets allows us to edit an instance later
      */
-    public long getTimeStart() {
+    public String getTimeStart() {
         return timeStart;
     }
 
-    public void setTimeStart(long timeStart) {
+    public void setTimeStart(String timeStart) {
         this.timeStart = timeStart;
     }
 
-    public long getTimeEnd() {
+    public String getTimeEnd() {
         return timeEnd;
     }
 
-    public void setTimeEnd(long timeEnd) {
+    public void setTimeEnd(String timeEnd) {
         this.timeEnd = timeEnd;
     }
 
@@ -65,8 +62,6 @@ public class ObservationCall {
     }
 
     public String produceDescriptionString() {
-        String start = String.valueOf(timeStart);
-        String end = String.valueOf(timeEnd);
-        return " Start:"+start + " End:" + end + " Location:" + location + " Reason:" + reason;
+        return " Start:" + timeStart + " End:" + timeEnd + " Location:" + location + " Reason:" + reason;
     }
 }
