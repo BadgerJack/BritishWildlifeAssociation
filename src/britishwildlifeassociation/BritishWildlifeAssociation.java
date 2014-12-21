@@ -27,7 +27,6 @@ public class BritishWildlifeAssociation {
      Observations not included as they are kept with
      their relative Controller.animals.
      */
-    
     static Date date = new Date();
 
     public static void main(String[] args) {
@@ -50,7 +49,7 @@ public class BritishWildlifeAssociation {
         for (Volunteer volunteer : Controller.volunteers) {
             if ("M".equals(volunteer.getFirstName()) && "S".equals(volunteer.getLastName())) {
                 volunteer.setFirstName("P");
-                Controller.professionals.add(new Professional(date.getTime(), date.getTime(), 900, 2, volunteer));
+                Controller.professionals.add(new Professional(date.getTime(), date.getTime(), 900, volunteer));
                 Controller.volunteers.remove(volunteer);
                 break;
             }
@@ -92,7 +91,7 @@ public class BritishWildlifeAssociation {
 
         Volunteer v = new Volunteer("Tom", "Baker", "Watchtower, Fort Boyard", "N/A", "jellybeans@hotmail.com");
         //keep as date or set long?
-        Controller.professionals.add(new Professional(date.getTime(), date.getTime(), 1200, 0, v));
+        Controller.professionals.add(new Professional(date.getTime(), date.getTime(), 1200, v));
 
         Controller.observations.add(new Observation(Controller.animals.get(0), Controller.volunteers.get(0), date.getTime(), "Somewhere", "Hordes of bees", 1, false));
     }

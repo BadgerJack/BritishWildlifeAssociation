@@ -8,11 +8,17 @@ import javax.swing.JOptionPane;
  */
 public class ObserverMakeProf extends javax.swing.JFrame {
 
+    Volunteer volun;
+
+    public ObserverMakeProf() {
+    }
+
     /**
      * Creates new form ObserverMakeProf
      */
-    public ObserverMakeProf() {
+    public ObserverMakeProf(Volunteer v) {
         initComponents();
+        volun = v;
     }
 
     /**
@@ -120,7 +126,7 @@ public class ObserverMakeProf extends javax.swing.JFrame {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         if (txtContractStart.getText().isEmpty() == false || txtContractEnd.getText().isEmpty() == false
                 || txtSalary.getText().isEmpty() == false) {
-            Controller.makeProfObserver(txtContractStart.getText(),
+            Controller.makeProfObserver(volun, txtContractStart.getText(),
                     txtContractEnd.getText(), txtSalary.getText());
             this.dispose();
         } else {

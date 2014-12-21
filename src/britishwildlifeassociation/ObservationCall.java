@@ -8,9 +8,8 @@ import java.util.Date;
  */
 public class ObservationCall {
 
-    Date timeStart, timeEnd;
+    Long timeStart, timeEnd;
     String location, reason;
-    Animal animal;
 
     /*
     Constructor Methods
@@ -21,8 +20,7 @@ public class ObservationCall {
     public ObservationCall() {
     }
 
-    public ObservationCall(Animal animal, Date timeStart, Date timeEnd, String location, String reason) {
-        this.animal = animal;
+    public ObservationCall(Long timeStart, Long timeEnd, String location, String reason) {
         this.timeStart = timeStart;
         this.timeEnd = timeEnd;
         this.location = location;
@@ -34,16 +32,16 @@ public class ObservationCall {
     Most of these will be set in the constructor,
     but Sets allows us to edit an instance later
      */
-    public Date getTimeStart() {
+    public long getTimeStart() {
         return timeStart;
     }
-    public void setTimeStart(Date timeStart) {
+    public void setTimeStart(long timeStart) {
         this.timeStart = timeStart;
     }
-    public Date getTimeEnd() {
+    public long getTimeEnd() {
         return timeEnd;
     }
-    public void setTimeEnd(Date timeEnd) {
+    public void setTimeEnd(long timeEnd) {
         this.timeEnd = timeEnd;
     }
     public String getLocation() {
@@ -57,12 +55,6 @@ public class ObservationCall {
     }
     public void setReason(String reason) {
         this.reason = reason;
-    }
-    public Animal getAnimal() {
-        return animal;
-    }
-    public void setAnimal(Animal animal) {
-        this.animal = animal;
     }
     
 }

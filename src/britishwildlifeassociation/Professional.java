@@ -1,7 +1,5 @@
 package britishwildlifeassociation;
 
-import java.util.Date;
-
 /**
  *
  * @author hobbes
@@ -13,19 +11,20 @@ public class Professional implements Observer {
     Volunteer prevStatus;
 
     /*
-    Constructor Methods
-    A default constructor (with no required input) is
-    useful for a variety of reasons; notably, Netbeans uses
-    them when binding code bundles
+     Constructor Methods
+     A default constructor (with no required input) is
+     useful for a variety of reasons; notably, Netbeans uses
+     them when binding code bundles
      */
     public Professional() {
     }
 //keep as Date or set long?
-    public Professional(Long contractStart, Long contractEnd, int salary, int annObservations, Volunteer prevStatus) {
+
+    public Professional(Long contractStart, Long contractEnd, int salary, Volunteer prevStatus) {
         this.contractStart = contractStart;
         this.contractEnd = contractEnd;
         this.salary = salary;
-        this.annObservations = annObservations;
+        this.annObservations = 0;
         this.prevStatus = prevStatus;
     }
 

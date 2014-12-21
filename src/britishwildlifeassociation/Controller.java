@@ -34,12 +34,44 @@ public class Controller {
 
     //Functions for controlling ObservationCall objects
     static void createObservationCall(String newAnimalName, String newLocation, String start, String end, String newDescription) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        long x = Long.parseLong(start);
+        long y = Long.parseLong(end);
+        for (Animal animal : animals) {
+            if (animal.getName().equals(newAnimalName)) {
+                animal.callsHistory.add(new ObservationCall(x, y, newLocation, newDescription));
+            }
+            break;
+        }
     }
 
     //Functions for controlling Observation objects
     static void createObservation(String newAnimalName, String newObserverName, String newDate, String newLocation, String newConfidence, boolean newProfessional, String newDescription) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Observer obs = null;
+        int con = Integer.parseInt(newConfidence);
+        long da = Long.parseLong(newDate);
+        //Determine observer. Could become own function if used often.
+        if (newProfessional == true) {
+            for (Professional observer : professionals) {
+                if ((observer.getPrevStatus().getFirstName() + " " + observer.getPrevStatus().getLastName()).equals(newObserverName)) {
+                    obs = observer;
+                    break;
+                }
+            }
+        } else if (newProfessional == false) {
+            for (Volunteer observer : volunteers) {
+                if ((observer.getFirstName() + " " + observer.getLastName()).equals(newObserverName)) {
+                    obs = observer;
+                    break;
+                }
+            }
+        }
+
+        for (Animal animal : animals) {
+            if (animal.getName().equals(newAnimalName)) {
+                animal.annualObservations.add(new Observation(animal, obs, da, newLocation, newDescription, con, newProfessional));
+                break;
+            }
+        }
     }
 
     static void editObservation(String newAnimalName, String newObserverName, String newDate, String newLocation, String newConfidence, boolean newProfessional, String newDescription) {
@@ -52,7 +84,7 @@ public class Controller {
 
     //Functions for controlling Observer objects
     static void createObserver(String newForename, String newSurname, String newEmail, String newPhone, String newAddress) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        volunteers.add(new Volunteer(newForename, newSurname, newAddress, newPhone, newEmail));
     }
 
     static void editObserver(String newForename, String newSurname, String newEmail, String newPhone, String newAddress) {
@@ -63,8 +95,11 @@ public class Controller {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    static void makeProfObserver(String newContractStart, String newContractEnd, String newSalary) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    static void makeProfObserver(Volunteer v, String newContractStart, String newContractEnd, String newSalary) {
+        long x = Long.parseLong(newContractStart);
+        long y = Long.parseLong(newContractEnd);
+        int z = Integer.parseInt(newSalary);
+        professionals.add(new Professional(x, y, z, v));
     }
 
     static void populate() {
