@@ -122,21 +122,24 @@ public class Controller {
     }
 
     static void populate() {
-        
+        GUI.animList.clear();
         for (int i = 0; i < animals.size(); ++i) {
             GUI.animList.addElement(animals.get(i).getName());
         }
+        GUI.profList.clear();
         for (int i = 0; i < professionals.size(); ++i) {
             GUI.profList.addElement(professionals.get(i).getPrevStatus().getFirstName() + " "
                     + professionals.get(i).getPrevStatus().getLastName() + " "
                     + professionals.get(i).getPrevStatus().getAddress()
             );
         }
+        GUI.volList.clear();
         for (int i = 0; i < volunteers.size(); ++i) {
             GUI.volList.addElement(volunteers.get(i).getFirstName() + " "
                     + volunteers.get(i).getLastName() + " "
                     + volunteers.get(i).getAddress());
         }
+        GUI.obsList.clear();
         for (int i = 0; i < observations.size(); ++i) {
             GUI.obsList.addElement(observations.get(i).getAnimal().getName() + " "
                     + observations.get(i).getAnimal().getThreatLevel());
