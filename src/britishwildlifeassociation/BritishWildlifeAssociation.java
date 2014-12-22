@@ -50,6 +50,9 @@ public class BritishWildlifeAssociation {
         Controller.animals.add(new Animal("Hedgehog", "1"));
         Controller.animals.add(new Animal("Rabbit", "1"));
 
+        Controller.animals.get(0).getCallsHistory().add(new ObservationCall("12/12/2012", "12/10/2015", "Torbay", "Mass migration"));
+        Controller.animals.get(1).getCallsHistory().add(new ObservationCall("12/12/2010", "12/10/2012", "Londonderry", "Mass migration"));
+
         Controller.volunteers.add(new Volunteer("Matt", "Smith", "23 Hamilton Gardens", "01626256312", "fezandbowtie@hotmail.co.uk"));
         Controller.volunteers.add(new Volunteer("David", "Tennant", "23 Hamilton Gardens", "01626256312", "awholenewspectrum@hotmail.com"));
         Controller.volunteers.add(new Volunteer("Peter", "Capaldi", "42 Current Lane", "02182823012", "newera@gmail.com"));

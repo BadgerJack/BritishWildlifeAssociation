@@ -181,7 +181,27 @@ public class Controller {
 
             //Remove old observation calls
             for (Animal a : animals) {
-                
+                for (ObservationCall call : a.getCallsHistory()) {
+                    if (date.after(getDate(call.getTimeEnd())) == true) {
+                        tempCall.add(call);
+                    }
+                }
+                for (ObservationCall c : tempCall) {
+                    a.getCallsHistory().remove(c);
+                }
+                tempCall.clear();
+            }
+
+            //Change volunteer to Passive
+            for (Volunteer v : volunteers) {
+                v.setCurrentStatus("Passive");
+                for (Animal a : animals) {
+                    for (Observation o : a.getAnnualObservations()) {
+                        if (o.getObserver().equals(v)) {
+                            v.setCurrentStatus("Active");
+                        }
+                    }
+                }
             }
         } catch (ParseException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
