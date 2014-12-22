@@ -99,7 +99,7 @@ public class Observation {
             obs = ((Volunteer) observer).getFirstName() + " " + ((Volunteer) observer).getLastName();
         }
         //timestamp
-        return animal.getName() + " Observer:" + obs + " Date:" + timestamp + " Location:" + location + " Description:" + description + " Confidence:" + confidence;
+        return "Animal:" + animal.getName() + ", Observer:" + obs + ". Date:" + timestamp + ", Location:" + location + ", " + confidence + " Description:" + description;
     }
 
 }

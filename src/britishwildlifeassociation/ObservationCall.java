@@ -62,6 +62,6 @@ public class ObservationCall {
     }
 
     public String produceDescriptionString() {
-        return " Start:" + timeStart + " End:" + timeEnd + " Location:" + location + " Reason:" + reason;
+        return reason + ", Location:" + location + ". Start:" + timeStart + ", End:" + timeEnd;
     }
 }

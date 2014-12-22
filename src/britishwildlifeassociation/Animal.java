@@ -62,6 +62,6 @@ public class Animal {
         String threat = String.valueOf(threatLevel);
         String annual = String.valueOf(annualObservations.size());
         String history = String.valueOf(callsHistory.size());
-        return name + " Threat:" + threat + " Observations:" + annual + " Calls:" + history;
+        return name + ", Threat:" + threat + ", Observations:" + annual + ", Calls:" + history;
     }
 }
