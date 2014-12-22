@@ -3,10 +3,7 @@ package britishwildlifeassociation;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -56,13 +53,17 @@ public class Controller {
         for (Animal animal : animals) {
             if (animal.getName().equals(newAnimalName)) {
                 animal.annualObservations.add(new Observation(animal, obs, newDate, newLocation, newDescription, newConfidence, newProfessional));
+
+                if (obs instanceof Professional) {
+                    ((Professional) obs).setAnnObservations(((Professional) obs).getAnnObservations() + 1);
+                }
+                
                 break;
             }
         }
     }
 
     static void editObservation(Observation obs, String animalName, String newObserverName, String newDate, String newLocation, String newConfidence, boolean newProfessional, String newDescription) {
-
         Observer observ;
         observ = determineObserver(newObserverName, newProfessional);
 
@@ -158,9 +159,13 @@ public class Controller {
         return o;
     }
 
+    static void checkDates() {
+    }
+
     public Date getDate(String s) throws ParseException {
         SimpleDateFormat form = new SimpleDateFormat("dd/MM/yyyy");
         Date date = form.parse(s);
+        //s = form.format(date);        //Stored code for formatting a date into string, may be useful later
         return date;
     }
 }

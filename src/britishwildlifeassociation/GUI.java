@@ -19,6 +19,7 @@ public class GUI extends javax.swing.JFrame {
      */
     public GUI() {
         initComponents();
+        Controller.checkDates();
         Controller.populate();
     }
 
@@ -350,7 +351,7 @@ public class GUI extends javax.swing.JFrame {
                     break;
                 }
             }
-            
+
             JFrame editObserver = new ObserverEdit(volun);
             editObserver.setVisible(true);
 
@@ -361,7 +362,7 @@ public class GUI extends javax.swing.JFrame {
                     break;
                 }
             }
-            
+
             JFrame editObserver = new ObserverEdit(volun);
             editObserver.setVisible(true);
         }
