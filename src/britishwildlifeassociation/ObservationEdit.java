@@ -32,7 +32,7 @@ public class ObservationEdit extends javax.swing.JFrame {
             txtObserver.setText(((Volunteer) observ).getFirstName() + " "
                     + ((Volunteer) observ).getLastName());
         }
-        txtConfidence.setText(obs.getConfidence());
+        txtConfidence.setSelectedItem(obs.getConfidence());
         txtADescription.setText(obs.getDescription());
         if (chkProfessional.isSelected()) {
             chkProfessional.setSelected(true);
@@ -55,7 +55,6 @@ public class ObservationEdit extends javax.swing.JFrame {
         txtDescription = new javax.swing.JScrollPane();
         txtADescription = new javax.swing.JTextArea();
         txtObserver = new javax.swing.JTextField();
-        txtConfidence = new javax.swing.JTextField();
         txtDate = new javax.swing.JTextField();
         btnCancel = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
@@ -67,6 +66,7 @@ public class ObservationEdit extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        txtConfidence = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Edit Observation");
@@ -111,6 +111,8 @@ public class ObservationEdit extends javax.swing.JFrame {
 
         jLabel6.setText("Animal");
 
+        txtConfidence.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Confident", "Not Confident" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,8 +121,8 @@ public class ObservationEdit extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(txtConfidence)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtConfidence, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(chkProfessional)
                         .addGap(115, 115, 115))
                     .addGroup(layout.createSequentialGroup()
@@ -167,10 +169,10 @@ public class ObservationEdit extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtConfidence, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chkProfessional))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chkProfessional)
+                    .addComponent(txtConfidence, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -179,7 +181,7 @@ public class ObservationEdit extends javax.swing.JFrame {
                     .addComponent(btnCancel)
                     .addComponent(btnSave)
                     .addComponent(btnDelete))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -191,10 +193,9 @@ public class ObservationEdit extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         if (txtAnimal.getText().isEmpty() == false || txtLocation.getText().isEmpty() == false
-                || txtDate.getText().isEmpty() == false || txtObserver.getText().isEmpty() == false
-                || txtConfidence.getText().isEmpty() == false) {
+                || txtDate.getText().isEmpty() == false || txtObserver.getText().isEmpty() == false) {
             Controller.editObservation(obs, txtAnimal.getText(), txtObserver.getText(),
-                    txtDate.getText(), txtLocation.getText(), txtConfidence.getText(),
+                    txtDate.getText(), txtLocation.getText(), txtConfidence.getSelectedItem().toString(),
                     chkProfessional.isSelected(), txtADescription.getText());
             Controller.populate();
             this.dispose();
@@ -204,7 +205,7 @@ public class ObservationEdit extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Delete Animal", JOptionPane.YES_NO_OPTION) == 0) {
+        if (JOptionPane.showConfirmDialog(null, "Are you sure?", "Delete Observation", JOptionPane.YES_NO_OPTION) == 0) {
             Controller.deleteObservation(obs, txtAnimal.getText(), txtObserver.getText(), txtDate.getText());
         }
         Controller.populate();
@@ -259,7 +260,7 @@ public class ObservationEdit extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JTextArea txtADescription;
     private javax.swing.JTextField txtAnimal;
-    private javax.swing.JTextField txtConfidence;
+    private javax.swing.JComboBox txtConfidence;
     private javax.swing.JTextField txtDate;
     private javax.swing.JScrollPane txtDescription;
     private javax.swing.JTextField txtLocation;

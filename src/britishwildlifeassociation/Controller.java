@@ -3,6 +3,7 @@ package britishwildlifeassociation;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -164,7 +165,9 @@ public class Controller {
     static void checkDates() {
         ArrayList<Professional> tempProf = new ArrayList<>();       //prevents ConcurrentModificationException in function
         ArrayList<ObservationCall> tempCall = new ArrayList<>();
+        ArrayList<Observation> tempObs = new ArrayList<>();
         Date date = new Date();
+
         try {
             //Replace old professionals as volunteers
             for (Professional prof : professionals) {
