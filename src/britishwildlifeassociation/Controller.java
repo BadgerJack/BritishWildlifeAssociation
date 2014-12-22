@@ -165,7 +165,6 @@ public class Controller {
     public Date getDate(String s) throws ParseException {
         SimpleDateFormat form = new SimpleDateFormat("dd/MM/yyyy");
         Date date = form.parse(s);
-        //s = form.format(date);        //Stored code for formatting a date into string, may be useful later
         return date;
     }
 }

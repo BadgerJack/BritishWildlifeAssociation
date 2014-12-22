@@ -58,26 +58,6 @@ public class Animal {
         return callsHistory;
     }
 
-    /*
-     Creates an observation object about the current animal
-     Might otherwise have been declared in the Observer classes,
-     but I prefer to keep things localised
-     */
-    public Observation makeObservation(Observer observer, Animal animal) {
-        animal = this;
-        return null;//new Observation(animal, observer, timestamp, location, description, confidence, professional);
-    }
-
-    /*
-     Creates an observation alert regarding the current animal
-     Created here rather than in the main class as the list of calls
-     is stored locally for simple access
-     */
-    public ObservationCall issueCall(Animal animal) {
-        animal = this;
-        return null;
-    }
-
     public String produceDescriptionString() {
         String threat = String.valueOf(threatLevel);
         String annual = String.valueOf(annualObservations.size());

@@ -75,7 +75,7 @@ public class Professional implements Observer {
 
     @Override
     public String produceDescriptionString() {
-        return prevStatus.firstName + " " + prevStatus.lastName + " " + contractEnd + " " + salary + " " + annObservations;
+        return prevStatus.firstName + " " + prevStatus.lastName + ", Contract Ends:" + contractEnd + " Salary:" + salary + " Observations:" + annObservations;
     }
 
 }

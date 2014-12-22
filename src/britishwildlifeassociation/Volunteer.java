@@ -1,5 +1,6 @@
 package britishwildlifeassociation;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
@@ -29,7 +30,8 @@ public class Volunteer implements Observer {
         this.phone = phone;
         this.email = email;
 
-        this.registrationDate = Calendar.getInstance().getTime().toString();
+        SimpleDateFormat form = new SimpleDateFormat("dd/MM/yyyy");
+        this.registrationDate = form.format(Calendar.getInstance().getTime());
         this.currentStatus = "Active";
     }
 
@@ -96,7 +98,8 @@ public class Volunteer implements Observer {
 
     @Override
     public String produceDescriptionString() {
-        return firstName + " " + lastName + " " + address + " " + phone + " " + email + " " + registrationDate + " " + currentStatus;
+        return firstName + " " + lastName + ", Address:" + address + ", Phone:" + phone + ", Email:"
+                + email + ". Registered:" + registrationDate + ". Status:" + currentStatus;
     }
 
 }
