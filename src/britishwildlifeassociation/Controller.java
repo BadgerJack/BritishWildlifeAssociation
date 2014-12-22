@@ -4,6 +4,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -57,7 +59,7 @@ public class Controller {
                 if (obs instanceof Professional) {
                     ((Professional) obs).setAnnObservations(((Professional) obs).getAnnObservations() + 1);
                 }
-                
+
                 break;
             }
         }
@@ -160,9 +162,33 @@ public class Controller {
     }
 
     static void checkDates() {
+        ArrayList<Professional> tempProf = new ArrayList<>();       //prevents ConcurrentModificationException in function
+        ArrayList<ObservationCall> tempCall = new ArrayList<>();
+        Date date = new Date();
+        try {
+            //Replace old professionals as volunteers
+            for (Professional prof : professionals) {
+
+                if (date.after(getDate(prof.getContractEnd())) == true) {
+                    volunteers.add(prof.getPrevStatus());
+                    tempProf.add(prof);
+                }
+
+            }
+            for (Professional p : tempProf) {
+                professionals.remove(p);
+            }
+
+            //Remove old observation calls
+            for (Animal a : animals) {
+                
+            }
+        } catch (ParseException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-    public Date getDate(String s) throws ParseException {
+    static public Date getDate(String s) throws ParseException {
         SimpleDateFormat form = new SimpleDateFormat("dd/MM/yyyy");
         Date date = form.parse(s);
         return date;

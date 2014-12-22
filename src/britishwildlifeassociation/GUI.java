@@ -1,5 +1,8 @@
 package britishwildlifeassociation;
 
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 
@@ -17,7 +20,7 @@ public class GUI extends javax.swing.JFrame {
     /**
      * Creates new form GUI and populates with hard coded values
      */
-    public GUI() {
+    public GUI(){
         initComponents();
         Controller.checkDates();
         Controller.populate();
@@ -56,6 +59,7 @@ public class GUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("British Wildlife Association");
+        setResizable(false);
 
         btnNewObservation.setText("New Observation");
         btnNewObservation.addActionListener(new java.awt.event.ActionListener() {
@@ -426,7 +430,9 @@ public class GUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUI().setVisible(true);
+                
+                    new GUI().setVisible(true);
+                
             }
         });
     }

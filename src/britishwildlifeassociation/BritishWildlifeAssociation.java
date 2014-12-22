@@ -55,7 +55,9 @@ public class BritishWildlifeAssociation {
         Controller.volunteers.add(new Volunteer("Peter", "Capaldi", "42 Current Lane", "02182823012", "newera@gmail.com"));
 
         Volunteer v = new Volunteer("Tom", "Baker", "Watchtower, Fort Boyard", "N/A", "jellybeans@hotmail.com");
+        Volunteer s = new Volunteer("Peter", "Davison", "Cricket Field", "01626242135", "purpleleek@hotmail.com");
         Controller.professionals.add(new Professional("26/09/2012", "31/12/2015", 1200, v));
+        Controller.professionals.add(new Professional("26/09/2012", "22/12/2012", 1500, s));
 
         Controller.animals.get(0).getAnnualObservations().add(new Observation(Controller.animals.get(0), Controller.volunteers.get(0), "12/12/12", "Somewhere", "Hordes of bees", "1", false));
     }
